@@ -1,12 +1,21 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import eventNetworking from "@/assets/event-networking.jpg";
 import eventKeynote from "@/assets/event-keynote.jpg";
 import eventExpo from "@/assets/event-expo.jpg";
 import dashboardApp from "@/assets/dashboard-app.jpg";
 
 export const HeroSection = () => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen pt-24 overflow-hidden gradient-hero">
       {/* Background Glow Effects */}
@@ -54,9 +63,9 @@ export const HeroSection = () => {
                 Book a Demo
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="heroOutline" size="lg">
+              <Button variant="heroOutline" size="lg" onClick={() => setIsVideoOpen(true)}>
                 <Play className="mr-2 w-4 h-4" />
-                View Plans
+                Video
               </Button>
             </div>
 
@@ -180,6 +189,25 @@ export const HeroSection = () => {
 
       {/* Bottom Gradient Fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+
+      {/* Video Dialog */}
+      <Dialog open={isVideoOpen} onOpenChange={setIsVideoOpen}>
+        <DialogContent className="max-w-4xl p-0 overflow-hidden bg-black border-white/10">
+          <DialogHeader className="sr-only">
+            <DialogTitle>Native Mobile Event App</DialogTitle>
+          </DialogHeader>
+          <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+            <iframe
+              src="https://player.vimeo.com/video/1040018209?badge=0&autopause=0&player_id=0&app_id=58479"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              className="absolute inset-0 w-full h-full"
+              title="Native Mobile Event App"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
