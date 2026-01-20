@@ -83,8 +83,8 @@ export const TrustSection = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="text-center mt-16"
         >
-          <p className="text-muted-foreground text-sm">
-            And <span className="font-semibold text-foreground">500+</span> more organizations worldwide
+        <p className="text-muted-foreground text-sm">
+            And many more organizations worldwide
           </p>
         </motion.div>
       </div>
