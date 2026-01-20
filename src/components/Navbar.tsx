@@ -19,16 +19,16 @@ export const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 glass-card"
+      className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border shadow-sm"
     >
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
             <img
               src={eventmagixLogo}
               alt="Eventmagix"
-              className="h-8 md:h-10 w-auto object-contain"
+              className="h-16 md:h-20 w-auto object-contain"
             />
           </a>
 
