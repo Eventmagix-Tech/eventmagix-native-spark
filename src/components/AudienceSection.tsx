@@ -17,23 +17,23 @@ const eventFormats = [
   {
     id: "conferences",
     icon: CalendarDays,
-    title: "Konferanslar & Kongreler",
-    description: "Büyük ölçekli, çok oturumlu profesyonel etkinlikler için tasarlandı. Dinamik ajanda, konuşmacı profilleri ve interaktif oturum takibi ile katılımcı deneyimini üst seviyeye taşıyın.",
-    highlights: ["Paralel Oturum Yönetimi", "Kişisel Ajanda", "Canlı Q&A"]
+    title: "Conferences & Congresses",
+    description: "Designed for large-scale, multi-session professional events. Elevate attendee experience with dynamic agendas, speaker profiles, and interactive session tracking.",
+    highlights: ["Parallel Sessions", "Personal Agenda", "Live Q&A"]
   },
   {
     id: "expos",
     icon: Store,
-    title: "Fuarlar & Expo'lar",
-    description: "Sergiler, standlar ve B2B buluşmalar için optimize edildi. İnteraktif haritalar, exhibitor listeleri ve randevu sistemi ile networking'i kolaylaştırın.",
-    highlights: ["İnteraktif Stand Haritası", "Lead Retrieval", "B2B Toplantı"]
+    title: "Trade Shows & Expos",
+    description: "Optimized for exhibitions, booths, and B2B meetings. Facilitate networking with interactive maps, exhibitor listings, and appointment scheduling.",
+    highlights: ["Interactive Floor Map", "Lead Retrieval", "B2B Meetings"]
   },
   {
     id: "corporate",
     icon: Briefcase,
-    title: "Kurumsal Toplantılar",
-    description: "Şirket içi etkinlikler, ürün lansmanları ve eğitim programları için ideal. Özel branding, güvenli erişim ve detaylı raporlama imkanı.",
-    highlights: ["White Label", "Çoklu Dil", "Detaylı Analytics"]
+    title: "Corporate Events",
+    description: "Ideal for internal meetings, product launches, and training programs. Custom branding, secure access, and detailed reporting capabilities.",
+    highlights: ["White Label", "Multi-Language", "Detailed Analytics"]
   }
 ];
 
@@ -41,26 +41,26 @@ const attendeeTypes = [
   {
     id: "academics",
     icon: GraduationCap,
-    title: "Akademisyenler & Araştırmacılar",
-    description: "Kongre ve sempozyum katılımcıları için sunumları takip etme, abstrakt görüntüleme ve meslektaşlarla bağlantı kurma imkanı."
+    title: "Academics & Researchers",
+    description: "Follow presentations, view abstracts, and connect with colleagues at congresses and symposiums."
   },
   {
     id: "professionals",
     icon: Users,
-    title: "Sektör Profesyonelleri",
-    description: "Kurumsal karar vericiler ve uzmanlar için networking, içerik keşfi ve iş fırsatları oluşturma platformu."
+    title: "Industry Professionals",
+    description: "A platform for corporate decision-makers and experts to network, discover content, and create business opportunities."
   },
   {
     id: "sponsors",
     icon: Megaphone,
-    title: "Sponsorlar & Exhibitor'lar",
-    description: "Marka görünürlüğü, lead toplama ve potansiyel müşterilerle birebir görüşme fırsatları."
+    title: "Sponsors & Exhibitors",
+    description: "Brand visibility, lead collection, and one-on-one meeting opportunities with potential clients."
   },
   {
     id: "organizers",
     icon: Building2,
-    title: "Etkinlik Organizatörleri",
-    description: "PCO'lar ve etkinlik ajansları için gerçek zamanlı yönetim, analitik ve katılımcı iletişimi araçları."
+    title: "Event Organizers",
+    description: "Real-time management, analytics, and attendee communication tools for PCOs and event agencies."
   }
 ];
 
@@ -69,8 +69,8 @@ export const AudienceSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const tabs = [
-    { id: "formats" as const, label: "Etkinlik Formatları" },
-    { id: "attendees" as const, label: "Katılımcı Türleri" }
+    { id: "formats" as const, label: "Event Formats" },
+    { id: "attendees" as const, label: "Attendee Types" }
   ];
 
   const currentItems = activeTab === "formats" ? eventFormats : attendeeTypes;
@@ -96,13 +96,13 @@ export const AudienceSection = () => {
           className="text-center max-w-3xl mx-auto mb-12"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-4">
-            Kimler İçin?
+            Who Is It For?
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Her Etkinlik Formatı, Her Katılımcı
+            Every Event Format, Every Attendee
           </h2>
           <p className="text-lg text-muted-foreground">
-            Eventmagix, farklı etkinlik türleri ve katılımcı profilleri için özelleştirilmiş çözümler sunar.
+            Eventmagix offers tailored solutions for different event types and attendee profiles.
           </p>
         </motion.div>
 
