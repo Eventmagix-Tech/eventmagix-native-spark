@@ -55,7 +55,7 @@ const reasons = [
 
 export const DifferentiatorsSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-background relative overflow-hidden" id="why">
+    <section className="pt-8 md:pt-12 pb-20 md:pb-28 bg-background relative overflow-hidden" id="why">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--accent)/0.05),transparent_70%)]" />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
