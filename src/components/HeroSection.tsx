@@ -9,10 +9,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { BookDemoDialog } from "@/components/BookDemoDialog";
-import eventNetworking from "@/assets/event-networking.jpg";
-import eventKeynote from "@/assets/event-keynote.jpg";
-import eventExpo from "@/assets/event-expo.jpg";
 import nativeAppHero from "@/assets/app-mockups/native-app-hero.jpg";
+import abstracts from "@/assets/app-mockups/abstracts.jpg";
 
 export const HeroSection = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -93,95 +91,57 @@ export const HeroSection = () => {
             </motion.div>
           </motion.div>
 
-          {/* Photo Collage */}
+          {/* Two Featured Images */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
             className="relative"
           >
-            <div className="grid grid-cols-12 grid-rows-6 gap-4 h-[500px] md:h-[550px] lg:h-[600px]">
-              {/* Main Large Image - Keynote */}
+            <div className="flex gap-6 justify-center items-center h-[500px] md:h-[550px] lg:h-[600px]">
+              {/* Access Content Image */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                className="col-span-7 row-span-4 relative group"
+                initial={{ opacity: 0, y: 30, rotate: -3 }}
+                animate={{ opacity: 1, y: 0, rotate: -3 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                whileHover={{ rotate: 0, scale: 1.02 }}
+                className="relative group w-[45%] h-[85%]"
               >
-                <div className="absolute inset-0 bg-tech-blue/30 rounded-2xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
+                <div className="absolute inset-0 bg-accent/30 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity" />
                 <img
-                  src={eventKeynote}
-                  alt="Conference keynote speaker"
-                  className="relative w-full h-full object-cover rounded-2xl shadow-2xl ring-1 ring-white/10 group-hover:ring-white/20 transition-all duration-300"
+                  src={abstracts}
+                  alt="Access event content and abstracts"
+                  className="relative w-full h-full object-cover rounded-3xl shadow-2xl ring-1 ring-white/20 group-hover:ring-white/40 transition-all duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent rounded-2xl" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-medium">
-                    Keynote Sessions
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent rounded-3xl" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <span className="inline-block px-4 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-semibold mb-2">
+                    Access Content
                   </span>
+                  <p className="text-white/70 text-sm">Browse abstracts & materials</p>
                 </div>
               </motion.div>
 
-              {/* Networking Image */}
+              {/* Accreditation Image */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-                className="col-span-5 row-span-3 relative group"
+                initial={{ opacity: 0, y: -30, rotate: 3 }}
+                animate={{ opacity: 1, y: 0, rotate: 3 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                whileHover={{ rotate: 0, scale: 1.02 }}
+                className="relative group w-[45%] h-[85%]"
               >
-                <div className="absolute inset-0 bg-tech-blue/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
-                <img
-                  src={eventNetworking}
-                  alt="Professional networking"
-                  className="relative w-full h-full object-cover rounded-2xl shadow-2xl ring-1 ring-white/10 group-hover:ring-white/20 transition-all duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent rounded-2xl" />
-                <div className="absolute bottom-3 left-3 right-3">
-                  <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-medium">
-                    Networking
-                  </span>
-                </div>
-              </motion.div>
-
-              {/* Expo Image */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.6, duration: 0.5 }}
-                className="col-span-5 row-span-3 col-start-8 row-start-4 relative group"
-              >
-                <div className="absolute inset-0 bg-tech-blue/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
-                <img
-                  src={eventExpo}
-                  alt="Exhibition hall"
-                  className="relative w-full h-full object-cover rounded-2xl shadow-2xl ring-1 ring-white/10 group-hover:ring-white/20 transition-all duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent rounded-2xl" />
-                <div className="absolute bottom-3 left-3 right-3">
-                  <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-medium">
-                    Exhibitions
-                  </span>
-                </div>
-              </motion.div>
-
-              {/* App Dashboard Image */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.5 }}
-                className="col-span-7 row-span-2 row-start-5 relative group"
-              >
-                <div className="absolute inset-0 bg-tech-blue/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
+                <div className="absolute inset-0 bg-tech-blue/30 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity" />
                 <img
                   src={nativeAppHero}
-                  alt="Native app QR check-in"
-                  className="relative w-full h-full object-cover rounded-2xl shadow-2xl ring-1 ring-white/10 group-hover:ring-white/20 transition-all duration-300"
+                  alt="Event accreditation and check-in"
+                  className="relative w-full h-full object-cover rounded-3xl shadow-2xl ring-1 ring-white/20 group-hover:ring-white/40 transition-all duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent rounded-2xl" />
-                <div className="absolute bottom-3 left-3 right-3">
-                  <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-medium">
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent rounded-3xl" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <span className="inline-block px-4 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-semibold mb-2">
                     Accreditation
                   </span>
+                  <p className="text-white/70 text-sm">Fast QR check-in & badges</p>
                 </div>
               </motion.div>
             </div>
