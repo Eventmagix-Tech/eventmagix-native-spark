@@ -71,7 +71,7 @@ const features = [
 
 export const FeaturesSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-secondary/30" id="features">
+    <section className="pt-8 md:pt-12 pb-20 md:pb-28 bg-secondary/30" id="features">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
