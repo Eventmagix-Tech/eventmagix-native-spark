@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Smartphone, Zap, Bell, Wifi, Palette, ArrowRight } from "lucide-react";
 import dashboard1 from "@/assets/app-mockups/dashboard-1.png";
 import brandedExperience from "@/assets/app-mockups/branded-experience.jpg";
-import nativeAppHero from "@/assets/app-mockups/native-app-hero.jpg";
+import nativePerformance from "@/assets/app-mockups/native-performance.jpg";
 import offlineAirplane from "@/assets/app-mockups/offline-airplane.jpg";
 import livePollingEngagement from "@/assets/app-mockups/live-polling-engagement.jpg";
 
@@ -13,7 +13,7 @@ const reasons = [
     title: "100% Native Performance",
     description:
       "Built specifically for iOS and Android using native code — not web wrappers. Experience buttery-smooth 60fps animations, instant response times, and the polished feel users expect from premium apps.",
-    image: nativeAppHero,
+    image: nativePerformance,
     imageAlt: "Native app performance showcase",
   },
   {
