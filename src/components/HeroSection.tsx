@@ -74,33 +74,64 @@ export const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="relative flex justify-center"
+            className="relative flex justify-center items-center"
           >
             <div className="relative group">
-              {/* Glow Effect */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-accent/40 via-tech-blue/30 to-accent/20 rounded-[2rem] blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-              
-              {/* Main Image */}
+              {/* Animated Ring */}
               <motion.div
-                whileHover={{ scale: 1.02, rotate: 0 }}
-                initial={{ rotate: 2 }}
-                animate={{ rotate: 2 }}
-                transition={{ duration: 0.4 }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute -inset-8 rounded-[2.5rem] border border-dashed border-white/20"
+              />
+              
+              {/* Outer Glow */}
+              <div className="absolute -inset-6 bg-gradient-to-br from-accent via-tech-blue/50 to-accent/30 rounded-[2.5rem] blur-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-700" />
+              
+              {/* Inner Glow Ring */}
+              <div className="absolute -inset-1 bg-gradient-to-br from-white/30 via-accent/40 to-tech-blue/30 rounded-[2rem] blur-sm opacity-80" />
+              
+              {/* Main Image Container */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="relative"
               >
-                <img
-                  src={abstracts}
-                  alt="Access event content and abstracts"
-                  className="relative w-full max-w-md h-auto object-cover rounded-3xl shadow-2xl ring-2 ring-white/20 group-hover:ring-white/40 transition-all duration-500"
-                />
-                
-                {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent rounded-3xl" />
+                <div className="relative p-1 rounded-[1.8rem] bg-gradient-to-br from-white/40 via-white/10 to-transparent">
+                  <img
+                    src={abstracts}
+                    alt="Event app content access"
+                    className="relative w-full max-w-sm md:max-w-md h-auto object-cover rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)]"
+                  />
+                  
+                  {/* Glass Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-white/5 rounded-3xl" />
+                  
+                  {/* Shine Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent rounded-3xl opacity-60" />
+                </div>
               </motion.div>
               
-              {/* Decorative Elements */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-xl" />
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-tech-blue/20 rounded-full blur-xl" />
+              {/* Floating Decorative Elements */}
+              <motion.div
+                animate={{ y: [0, -12, 0], x: [0, 5, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-accent to-accent/50 rounded-2xl blur-sm opacity-60"
+              />
+              <motion.div
+                animate={{ y: [0, 10, 0], x: [0, -5, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-br from-tech-blue to-tech-blue/40 rounded-full blur-md opacity-50"
+              />
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-1/2 -right-10 w-4 h-4 bg-white/60 rounded-full"
+              />
+              <motion.div
+                animate={{ scale: [1, 1.3, 1] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+                className="absolute top-1/4 -left-8 w-3 h-3 bg-accent/80 rounded-full"
+              />
             </div>
           </motion.div>
         </div>
