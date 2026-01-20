@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import eventNetworking from "@/assets/event-networking.jpg";
-import eventKeynote from "@/assets/event-keynote.jpg";
-import eventExpo from "@/assets/event-expo.jpg";
-
+import heroMockups from "@/assets/hero-mockups.png";
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen pt-24 overflow-hidden gradient-hero">
@@ -81,102 +78,27 @@ export const HeroSection = () => {
             </motion.div>
           </motion.div>
 
-          {/* Photo Collage */}
+          {/* Phone Mockups */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-            className="relative"
+            className="relative flex items-center justify-center"
           >
-            <div className="grid grid-cols-12 grid-rows-6 gap-4 h-[500px] md:h-[550px] lg:h-[600px]">
-              {/* Main Large Image - Keynote */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                className="col-span-7 row-span-4 relative group"
-              >
-                <div className="absolute inset-0 bg-tech-blue/30 rounded-2xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
-                <img
-                  src={eventKeynote}
-                  alt="Conference keynote speaker"
-                  className="relative w-full h-full object-cover rounded-2xl shadow-2xl ring-1 ring-white/10 group-hover:ring-white/20 transition-all duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent rounded-2xl" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-medium">
-                    Keynote Sessions
-                  </span>
-                </div>
-              </motion.div>
-
-              {/* Networking Image */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-                className="col-span-5 row-span-3 relative group"
-              >
-                <div className="absolute inset-0 bg-tech-blue/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
-                <img
-                  src={eventNetworking}
-                  alt="Professional networking"
-                  className="relative w-full h-full object-cover rounded-2xl shadow-2xl ring-1 ring-white/10 group-hover:ring-white/20 transition-all duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent rounded-2xl" />
-                <div className="absolute bottom-3 left-3 right-3">
-                  <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-medium">
-                    Networking
-                  </span>
-                </div>
-              </motion.div>
-
-              {/* Expo Image */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.6, duration: 0.5 }}
-                className="col-span-5 row-span-3 col-start-8 row-start-4 relative group"
-              >
-                <div className="absolute inset-0 bg-tech-blue/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
-                <img
-                  src={eventExpo}
-                  alt="Exhibition hall"
-                  className="relative w-full h-full object-cover rounded-2xl shadow-2xl ring-1 ring-white/10 group-hover:ring-white/20 transition-all duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent rounded-2xl" />
-                <div className="absolute bottom-3 left-3 right-3">
-                  <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-medium">
-                    Exhibitions
-                  </span>
-                </div>
-              </motion.div>
-
-              {/* Stats Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.5 }}
-                className="col-span-7 row-span-2 row-start-5 relative"
-              >
-                <div className="h-full glass-card rounded-2xl p-4 flex items-center justify-around bg-white/10 backdrop-blur-xl border border-white/20">
-                  <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-white">50+</div>
-                    <div className="text-xs text-white/60">Countries</div>
-                  </div>
-                  <div className="w-px h-8 bg-white/20" />
-                  <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-white">10K+</div>
-                    <div className="text-xs text-white/60">Sessions</div>
-                  </div>
-                  <div className="w-px h-8 bg-white/20" />
-                  <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-white">98%</div>
-                    <div className="text-xs text-white/60">Satisfaction</div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="relative"
+            >
+              {/* Glow effect behind mockups */}
+              <div className="absolute inset-0 bg-tech-blue/20 rounded-3xl blur-3xl scale-90" />
+              <img
+                src={heroMockups}
+                alt="Eventmagix mobile app mockups showing event management features"
+                className="relative w-full max-w-2xl h-auto drop-shadow-2xl"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </div>
