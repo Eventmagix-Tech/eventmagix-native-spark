@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import dashboard1 from "@/assets/app-mockups/dashboard-1.png";
-import dashboard2 from "@/assets/app-mockups/dashboard-2.png";
+import brandedExperience from "@/assets/app-mockups/branded-experience.jpg";
 import dashboard5 from "@/assets/app-mockups/dashboard-5.png";
 import carousel from "@/assets/app-mockups/carousel.jpg";
 import abstracts from "@/assets/app-mockups/abstracts.jpg";
@@ -114,7 +114,7 @@ export const AppShowcaseHero = () => {
                 <div className="h-full bg-card/50 backdrop-blur-sm rounded-3xl border border-border/50 p-5 overflow-hidden">
                   <div className="aspect-[4/3] rounded-xl overflow-hidden mb-4">
                     <img
-                      src={dashboard2}
+                      src={brandedExperience}
                       alt="Event layouts"
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                     />
