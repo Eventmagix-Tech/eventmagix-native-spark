@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import eventmagixLogo from "@/assets/eventmagix-logo.jpg";
+import eventmagixLogo from "@/assets/eventmagix-logo.png";
 
 const navLinks = [
   { name: "Features", href: "#features" },
