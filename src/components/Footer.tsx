@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import eventmagixLogo from "@/assets/eventmagix-logo.jpg";
+import eventmagixLogo from "@/assets/eventmagix-logo.png";
 
 const footerLinks = {
   product: [
