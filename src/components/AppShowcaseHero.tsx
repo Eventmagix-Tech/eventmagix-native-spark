@@ -58,7 +58,7 @@ export const AppShowcaseHero = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative h-full bg-card/50 backdrop-blur-sm rounded-3xl border border-border/50 p-6 md:p-8 overflow-hidden">
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
                   <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -69,35 +69,6 @@ export const AppShowcaseHero = () => {
                   <p className="text-sm text-muted-foreground">Native on both platforms</p>
                 </div>
               </div>
-              
-              {/* Store Badges */}
-              <div className="flex gap-3 mb-6">
-                <a 
-                  href="https://apps.apple.com/app/eventmagix" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="transition-transform hover:scale-105"
-                >
-                  <img 
-                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
-                    alt="Download on the App Store" 
-                    className="h-10"
-                  />
-                </a>
-                <a 
-                  href="https://play.google.com/store/apps/details?id=com.eventmagix" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="transition-transform hover:scale-105"
-                >
-                  <img 
-                    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
-                    alt="Get it on Google Play" 
-                    className="h-10"
-                  />
-                </a>
-              </div>
-              
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
                 <img
                   src={nativeAppHero}
