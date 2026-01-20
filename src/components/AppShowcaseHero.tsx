@@ -3,7 +3,7 @@ import dashboard1 from "@/assets/app-mockups/dashboard-1.png";
 import brandedExperience from "@/assets/app-mockups/branded-experience.jpg";
 import nativeAppHero from "@/assets/app-mockups/native-app-hero.jpg";
 import offlineAirplane from "@/assets/app-mockups/offline-airplane.jpg";
-import abstracts from "@/assets/app-mockups/abstracts.jpg";
+
 
 export const AppShowcaseHero = () => {
   const stats = [
@@ -146,16 +146,11 @@ export const AppShowcaseHero = () => {
                       Full functionality even in areas with poor connectivity. Content syncs automatically when back online.
                     </p>
                   </div>
-                  <div className="flex gap-3 justify-center">
+                  <div className="flex justify-center">
                     <img
                       src={offlineAirplane}
                       alt="App working offline on airplane"
-                      className="w-24 h-40 md:w-28 md:h-48 object-cover rounded-xl shadow-lg transform -rotate-6 group-hover:rotate-0 transition-transform duration-500"
-                    />
-                    <img
-                      src={abstracts}
-                      alt="Abstracts feature"
-                      className="w-24 h-40 md:w-28 md:h-48 object-cover rounded-xl shadow-lg transform rotate-6 group-hover:rotate-0 transition-transform duration-500"
+                      className="w-32 h-48 md:w-40 md:h-56 object-cover rounded-xl shadow-lg"
                     />
                   </div>
                 </div>
