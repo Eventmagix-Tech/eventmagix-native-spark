@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Smartphone, Zap, Bell, Wifi, Palette, ArrowRight } from "lucide-react";
 import dashboard1 from "@/assets/app-mockups/dashboard-1.png";
 import brandedExperience from "@/assets/app-mockups/branded-experience.jpg";
-import nativePerformance from "@/assets/app-mockups/native-performance.jpg";
+import agendaNative from "@/assets/app-mockups/agenda-native.jpg";
 import offlineAirplane from "@/assets/app-mockups/offline-airplane.jpg";
 import livePollingEngagement from "@/assets/app-mockups/live-polling-engagement.jpg";
 
@@ -15,7 +15,7 @@ const reasons = [
     shortDesc: "Built for iOS & Android using native code — not web wrappers.",
     description:
       "Experience buttery-smooth 60fps animations, instant response times, and the polished feel users expect from premium apps.",
-    image: nativePerformance,
+    image: agendaNative,
   },
   {
     number: "02",
