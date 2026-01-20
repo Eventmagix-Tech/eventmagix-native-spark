@@ -180,7 +180,7 @@ export const HeroSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent rounded-2xl" />
                 <div className="absolute bottom-3 left-3 right-3">
                   <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-medium">
-                    Native App
+                    Accreditation
                   </span>
                 </div>
               </motion.div>
