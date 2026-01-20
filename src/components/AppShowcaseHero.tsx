@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import dashboard1 from "@/assets/app-mockups/dashboard-1.png";
 import brandedExperience from "@/assets/app-mockups/branded-experience.jpg";
 import nativeAppHero from "@/assets/app-mockups/native-app-hero.jpg";
-import offlineMode from "@/assets/app-mockups/offline-mode.jpg";
+import offlineAirplane from "@/assets/app-mockups/offline-airplane.jpg";
 import abstracts from "@/assets/app-mockups/abstracts.jpg";
 
 export const AppShowcaseHero = () => {
@@ -148,8 +148,8 @@ export const AppShowcaseHero = () => {
                   </div>
                   <div className="flex gap-3 justify-center">
                     <img
-                      src={offlineMode}
-                      alt="Offline mode feature"
+                      src={offlineAirplane}
+                      alt="App working offline on airplane"
                       className="w-24 h-40 md:w-28 md:h-48 object-cover rounded-xl shadow-lg transform -rotate-6 group-hover:rotate-0 transition-transform duration-500"
                     />
                     <img
