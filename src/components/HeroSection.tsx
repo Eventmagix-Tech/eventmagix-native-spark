@@ -100,7 +100,7 @@ export const HeroSection = () => {
                   <img
                     src={abstracts}
                     alt="Event app content access"
-                    className="relative w-full max-w-sm md:max-w-md h-auto object-cover rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)]"
+                    className="relative w-full max-w-lg md:max-w-xl lg:max-w-2xl h-auto object-cover rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)]"
                   />
                   
                   {/* Glass Overlay */}
