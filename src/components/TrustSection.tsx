@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 // Import client logos
 import wissenLogo from "@/assets/clients/wissen.png";
 import sadberkLogo from "@/assets/clients/sadberk.jpg";
-import esnrLogo from "@/assets/clients/esnr.jpg";
 import boschLogo from "@/assets/clients/bosch.jpg";
 import yamahaLogo from "@/assets/clients/yamaha.jpg";
 import cciLogo from "@/assets/clients/cci.png";
@@ -16,7 +15,6 @@ import magnumLogo from "@/assets/clients/magnum.png";
 const clients = [
   { name: "Wissen", logo: wissenLogo },
   { name: "Sadberk Hanım Museum", logo: sadberkLogo },
-  { name: "ESNR", logo: esnrLogo },
   { name: "Bosch", logo: boschLogo },
   { name: "Yamaha", logo: yamahaLogo },
   { name: "CCI", logo: cciLogo },
