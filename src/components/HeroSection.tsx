@@ -9,7 +9,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { BookDemoDialog } from "@/components/BookDemoDialog";
-import nativeAppHero from "@/assets/app-mockups/native-app-hero.jpg";
 import abstracts from "@/assets/app-mockups/abstracts.jpg";
 
 export const HeroSection = () => {
@@ -68,82 +67,47 @@ export const HeroSection = () => {
                 Video
               </Button>
             </div>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="flex flex-wrap gap-8 justify-center lg:justify-start mt-12 pt-8 border-t border-white/10"
-            >
-              <div>
-                <div className="text-3xl font-bold text-white">500+</div>
-                <div className="text-sm text-white/60">Events Powered</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-white">1M+</div>
-                <div className="text-sm text-white/60">App Downloads</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-white">99.9%</div>
-                <div className="text-sm text-white/60">Uptime</div>
-              </div>
-            </motion.div>
           </motion.div>
 
-          {/* Two Featured Images */}
+          {/* Single Featured Image */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-            className="relative"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            className="relative flex justify-center"
           >
-            <div className="flex gap-6 justify-center items-center h-[500px] md:h-[550px] lg:h-[600px]">
-              {/* Access Content Image */}
+            <div className="relative group">
+              {/* Glow Effect */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-accent/40 via-tech-blue/30 to-accent/20 rounded-[2rem] blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+              
+              {/* Main Image */}
               <motion.div
-                initial={{ opacity: 0, y: 30, rotate: -3 }}
-                animate={{ opacity: 1, y: 0, rotate: -3 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                whileHover={{ rotate: 0, scale: 1.02 }}
-                className="relative group w-[45%] h-[85%]"
+                whileHover={{ scale: 1.02, rotate: 0 }}
+                initial={{ rotate: 2 }}
+                animate={{ rotate: 2 }}
+                transition={{ duration: 0.4 }}
+                className="relative"
               >
-                <div className="absolute inset-0 bg-accent/30 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity" />
                 <img
                   src={abstracts}
                   alt="Access event content and abstracts"
-                  className="relative w-full h-full object-cover rounded-3xl shadow-2xl ring-1 ring-white/20 group-hover:ring-white/40 transition-all duration-500"
+                  className="relative w-full max-w-md h-auto object-cover rounded-3xl shadow-2xl ring-2 ring-white/20 group-hover:ring-white/40 transition-all duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent rounded-3xl" />
+                
+                {/* Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent rounded-3xl" />
+                
+                {/* Label */}
                 <div className="absolute bottom-6 left-6 right-6">
-                  <span className="inline-block px-4 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-semibold mb-2">
+                  <span className="inline-block px-4 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-semibold">
                     Access Content
                   </span>
-                  <p className="text-white/70 text-sm">Browse abstracts & materials</p>
                 </div>
               </motion.div>
-
-              {/* Accreditation Image */}
-              <motion.div
-                initial={{ opacity: 0, y: -30, rotate: 3 }}
-                animate={{ opacity: 1, y: 0, rotate: 3 }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-                whileHover={{ rotate: 0, scale: 1.02 }}
-                className="relative group w-[45%] h-[85%]"
-              >
-                <div className="absolute inset-0 bg-tech-blue/30 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity" />
-                <img
-                  src={nativeAppHero}
-                  alt="Event accreditation and check-in"
-                  className="relative w-full h-full object-cover rounded-3xl shadow-2xl ring-1 ring-white/20 group-hover:ring-white/40 transition-all duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent rounded-3xl" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <span className="inline-block px-4 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-semibold mb-2">
-                    Accreditation
-                  </span>
-                  <p className="text-white/70 text-sm">Fast QR check-in & badges</p>
-                </div>
-              </motion.div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-xl" />
+              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-tech-blue/20 rounded-full blur-xl" />
             </div>
           </motion.div>
         </div>
