@@ -89,21 +89,21 @@ export const HeroSection = () => {
           >
             {/* iPhone */}
             <div className="relative z-10 animate-float">
-              <div className="absolute inset-0 bg-tech-blue/30 rounded-3xl blur-2xl scale-90" />
+              <div className="absolute inset-0 bg-tech-blue/30 rounded-[2.5rem] blur-2xl scale-90" />
               <img
                 src={iphoneMockup}
                 alt="Eventmagix iOS App"
-                className="relative w-48 md:w-56 lg:w-64 h-auto drop-shadow-2xl"
+                className="relative w-52 md:w-64 lg:w-72 h-auto drop-shadow-2xl rounded-[2rem]"
               />
             </div>
 
             {/* Android */}
             <div className="relative -ml-16 md:-ml-20 lg:-ml-24 mt-8 animate-float-delayed">
-              <div className="absolute inset-0 bg-tech-blue/20 rounded-3xl blur-2xl scale-90" />
+              <div className="absolute inset-0 bg-tech-blue/20 rounded-[2.5rem] blur-2xl scale-90" />
               <img
                 src={androidMockup}
                 alt="Eventmagix Android App"
-                className="relative w-44 md:w-52 lg:w-60 h-auto drop-shadow-2xl"
+                className="relative w-48 md:w-56 lg:w-64 h-auto drop-shadow-2xl rounded-[2rem]"
               />
             </div>
           </motion.div>
