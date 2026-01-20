@@ -4,6 +4,7 @@ import dashboard1 from "@/assets/app-mockups/dashboard-1.png";
 import brandedExperience from "@/assets/app-mockups/branded-experience.jpg";
 import nativeAppHero from "@/assets/app-mockups/native-app-hero.jpg";
 import offlineAirplane from "@/assets/app-mockups/offline-airplane.jpg";
+import livePollingEngagement from "@/assets/app-mockups/live-polling-engagement.jpg";
 
 const reasons = [
   {
@@ -39,8 +40,8 @@ const reasons = [
     title: "Real-Time Engagement Tools",
     description:
       "Keep attendees connected with instant push notifications, live polling, Q&A sessions, and real-time updates. Drive participation and create memorable interactive experiences throughout your event.",
-    image: null,
-    imageAlt: "",
+    image: livePollingEngagement,
+    imageAlt: "Live polling and interactive voting features",
   },
   {
     number: "05",
