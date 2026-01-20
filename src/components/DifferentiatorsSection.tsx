@@ -1,127 +1,154 @@
 import { motion } from "framer-motion";
-import { Smartphone, Zap, Bell, CheckCircle2, ArrowRight } from "lucide-react";
+import { Smartphone, Zap, Bell, Wifi, Palette, ArrowRight } from "lucide-react";
+import dashboard1 from "@/assets/app-mockups/dashboard-1.png";
+import brandedExperience from "@/assets/app-mockups/branded-experience.jpg";
+import nativeAppHero from "@/assets/app-mockups/native-app-hero.jpg";
+import offlineAirplane from "@/assets/app-mockups/offline-airplane.jpg";
 
-const differentiators = [
+const reasons = [
   {
+    number: "01",
     icon: Smartphone,
-    title: "Native Performance",
+    title: "100% Native Performance",
     description:
-      "Built specifically for iOS and Android. Unrivaled speed and full offline capability—your event in your pocket, anywhere.",
-    features: ["60 FPS Smooth UI", "Full Offline Mode", "Instant Load Times"],
-    accent: true,
+      "Built specifically for iOS and Android using native code — not web wrappers. Experience buttery-smooth 60fps animations, instant response times, and the polished feel users expect from premium apps.",
+    image: nativeAppHero,
+    imageAlt: "Native app performance showcase",
   },
   {
+    number: "02",
+    icon: Wifi,
+    title: "Offline-First Architecture",
+    description:
+      "Your event never stops, even without internet. Full functionality in airplane mode, conference centers with poor WiFi, or remote venues. Content syncs automatically when connectivity returns.",
+    image: offlineAirplane,
+    imageAlt: "App working offline on airplane",
+  },
+  {
+    number: "03",
     icon: Zap,
-    title: "Flexible Publishing",
+    title: "Flexible Publishing Options",
     description:
-      "Choose your path: Quick launch with Eventmagix Multi-App or go fully custom with your own White Label App.",
-    features: [
-      "Multi-App: Fast launch, low cost",
-      "White Label: Your brand, your identity",
-      "Both: 100% native experience",
-    ],
-    accent: false,
+      "Choose your path: Quick launch with Eventmagix Multi-App for fast deployment at low cost, or go fully custom with your own White Label App for complete brand ownership. Both deliver the same native experience.",
+    image: dashboard1,
+    imageAlt: "Dashboard and publishing options",
   },
   {
+    number: "04",
     icon: Bell,
-    title: "Real-Time Engagement",
+    title: "Real-Time Engagement Tools",
     description:
-      "Keep attendees connected and engaged with instant notifications, live interactions, and seamless communication.",
-    features: ["Live Voting & Q&A", "Push Notifications", "Instant Updates"],
-    accent: false,
+      "Keep attendees connected with instant push notifications, live polling, Q&A sessions, and real-time updates. Drive participation and create memorable interactive experiences throughout your event.",
+    image: null,
+    imageAlt: "",
+  },
+  {
+    number: "05",
+    icon: Palette,
+    title: "Fully Branded Experience",
+    description:
+      "Your event, your identity. Customize every aspect — colors, logos, fonts, and layouts — to create a seamless extension of your brand that attendees will remember.",
+    image: brandedExperience,
+    imageAlt: "Branded app experience",
   },
 ];
 
 export const DifferentiatorsSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-background" id="why">
-      <div className="container mx-auto px-4">
+    <section className="py-20 md:py-28 bg-background relative overflow-hidden" id="why">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--accent)/0.05),transparent_70%)]" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-tech-blue/5 rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-4 relative">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-4">
             Why Eventmagix?
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Built Different.{" "}
-            <span className="text-gradient">Built Native.</span>
+            5 Reasons to Choose{" "}
+            <span className="text-gradient">Eventmagix</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            While others rely on web wrappers, we deliver true native apps that
-            perform like nothing else on the market.
+            While others rely on web wrappers, we deliver true native apps that perform like nothing else on the market.
           </p>
         </motion.div>
 
-        {/* Differentiators Grid */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {differentiators.map((item, index) => (
+        {/* Reasons List */}
+        <div className="space-y-12 lg:space-y-16">
+          {reasons.map((reason, index) => (
             <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 30 }}
+              key={reason.number}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              className={
-                item.accent
-                  ? "bento-card-accent flex flex-col"
-                  : "bento-card flex flex-col"
-              }
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6 }}
+              className={`flex flex-col ${
+                index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+              } items-center gap-8 lg:gap-16`}
             >
-              {/* Icon */}
-              <div
-                className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
-                  item.accent
-                    ? "bg-white/20"
-                    : "bg-accent/10"
-                }`}
-              >
-                <item.icon
-                  className={`w-6 h-6 ${
-                    item.accent ? "text-white" : "text-accent"
-                  }`}
-                />
+              {/* Content Side */}
+              <div className="flex-1 text-center lg:text-left">
+                <div className="flex items-center gap-4 mb-4 justify-center lg:justify-start">
+                  <span className="text-5xl md:text-6xl font-black text-accent/15">
+                    {reason.number}
+                  </span>
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                    <reason.icon className="w-6 h-6 text-accent" />
+                  </div>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                  {reason.title}
+                </h3>
+                <p className="text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                  {reason.description}
+                </p>
               </div>
 
-              {/* Content */}
-              <h3
-                className={`text-xl font-bold mb-2 ${
-                  item.accent ? "text-white" : "text-foreground"
-                }`}
-              >
-                {item.title}
-              </h3>
-              <p
-                className={`text-sm mb-4 flex-grow ${
-                  item.accent ? "text-white/70" : "text-muted-foreground"
-                }`}
-              >
-                {item.description}
-              </p>
+              {/* Image Side */}
+              {reason.image && (
+                <div className="flex-1 relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-tech-blue/10 rounded-3xl blur-3xl opacity-50" />
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative"
+                  >
+                    <div className="relative p-1 rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-transparent">
+                      <img
+                        src={reason.image}
+                        alt={reason.imageAlt}
+                        className="w-full max-w-md mx-auto h-auto object-cover rounded-2xl shadow-xl"
+                      />
+                    </div>
+                  </motion.div>
+                </div>
+              )}
 
-              {/* Features */}
-              <ul className="space-y-2 mt-auto">
-                {item.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-sm">
-                    <CheckCircle2
-                      className={`w-4 h-4 flex-shrink-0 ${
-                        item.accent ? "text-tech-blue-light" : "text-accent"
-                      }`}
-                    />
-                    <span
-                      className={
-                        item.accent ? "text-white/80" : "text-foreground"
-                      }
-                    >
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              {/* Placeholder for items without image */}
+              {!reason.image && (
+                <div className="flex-1 relative flex items-center justify-center">
+                  <motion.div
+                    initial={{ scale: 0.9 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    className="w-full max-w-md h-64 rounded-2xl bg-gradient-to-br from-accent/20 via-tech-blue/10 to-accent/5 flex items-center justify-center"
+                  >
+                    <div className="text-center">
+                      <reason.icon className="w-16 h-16 text-accent/40 mx-auto mb-4" />
+                      <span className="text-muted-foreground text-sm">Real-Time Engagement</span>
+                    </div>
+                  </motion.div>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
@@ -131,8 +158,8 @@ export const DifferentiatorsSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center mt-12"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-center mt-16"
         >
           <a
             href="#features"

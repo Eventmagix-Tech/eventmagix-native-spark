@@ -6,7 +6,6 @@ import { FeaturesSection } from "@/components/FeaturesSection";
 import { PricingSection } from "@/components/PricingSection";
 import { AddonsSection } from "@/components/AddonsSection";
 import { Footer } from "@/components/Footer";
-import { AppShowcaseHero } from "@/components/AppShowcaseHero";
 import { AppJourneySection } from "@/components/AppJourneySection";
 import { AppFeaturesShowcase } from "@/components/AppFeaturesShowcase";
 
@@ -16,7 +15,6 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <AppShowcaseHero />
         <DifferentiatorsSection />
         <FeaturesSection />
         <AppJourneySection />
