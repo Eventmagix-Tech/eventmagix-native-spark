@@ -12,7 +12,7 @@ import { BookDemoDialog } from "@/components/BookDemoDialog";
 import eventNetworking from "@/assets/event-networking.jpg";
 import eventKeynote from "@/assets/event-keynote.jpg";
 import eventExpo from "@/assets/event-expo.jpg";
-import dashboardApp from "@/assets/dashboard-app.jpg";
+import brandedExperience from "@/assets/app-mockups/branded-experience.jpg";
 
 export const HeroSection = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -173,7 +173,7 @@ export const HeroSection = () => {
               >
                 <div className="absolute inset-0 bg-tech-blue/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
                 <img
-                  src={dashboardApp}
+                  src={brandedExperience}
                   alt="Event app dashboard"
                   className="relative w-full h-full object-cover rounded-2xl shadow-2xl ring-1 ring-white/10 group-hover:ring-white/20 transition-all duration-300"
                 />
