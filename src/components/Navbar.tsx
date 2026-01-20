@@ -28,7 +28,7 @@ export const Navbar = () => {
             <img
               src={eventmagixLogo}
               alt="Eventmagix"
-              className="h-[6.4rem] md:h-32 w-auto object-contain"
+              className="h-[4.5rem] md:h-[5.6rem] w-auto object-contain"
             />
           </a>
 
