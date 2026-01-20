@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import dashboard1 from "@/assets/app-mockups/dashboard-1.png";
 import brandedExperience from "@/assets/app-mockups/branded-experience.jpg";
-import dashboard5 from "@/assets/app-mockups/dashboard-5.png";
+import accreditation from "@/assets/app-mockups/accreditation.jpg";
 import carousel from "@/assets/app-mockups/carousel.jpg";
 import abstracts from "@/assets/app-mockups/abstracts.jpg";
 
@@ -61,18 +61,18 @@ export const AppShowcaseHero = () => {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
                   <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground">iOS & Android</h3>
-                  <p className="text-sm text-muted-foreground">Native on both platforms</p>
+                  <h3 className="font-semibold text-foreground">Accreditation</h3>
+                  <p className="text-sm text-muted-foreground">Fast & secure check-in</p>
                 </div>
               </div>
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
                 <img
-                  src={dashboard5}
-                  alt="Native app showcase"
+                  src={accreditation}
+                  alt="Event accreditation with QR code scanning"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
