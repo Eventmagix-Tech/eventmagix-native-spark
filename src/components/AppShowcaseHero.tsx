@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import dashboard1 from "@/assets/app-mockups/dashboard-1.png";
 import brandedExperience from "@/assets/app-mockups/branded-experience.jpg";
-import dashboard5 from "@/assets/app-mockups/dashboard-5.png";
+import nativeAppHero from "@/assets/app-mockups/native-app-hero.jpg";
 import carousel from "@/assets/app-mockups/carousel.jpg";
 import abstracts from "@/assets/app-mockups/abstracts.jpg";
 
@@ -71,7 +71,7 @@ export const AppShowcaseHero = () => {
               </div>
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
                 <img
-                  src={dashboard5}
+                  src={nativeAppHero}
                   alt="Native app showcase"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
