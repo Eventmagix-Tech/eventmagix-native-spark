@@ -31,245 +31,252 @@ import {
   ScanLine,
   BadgeCheck,
   Sparkles,
+  Network,
+  Zap,
+  Info,
+  DollarSign,
 } from "lucide-react";
 
-// All features from the PDF organized by category
-const features = [
-  // Basic Plan Features
+// Features grouped by category
+const featureCategories = [
   {
-    icon: Calendar,
-    title: "Agenda",
-    description: "Display event agenda with session filtering by category or day.",
-    gradient: "from-blue-500/20 to-cyan-500/20",
-    iconColor: "text-blue-500",
-    category: "Basic",
+    name: "Networking",
+    description: "Connect attendees and build meaningful relationships",
+    icon: Network,
+    accentColor: "text-blue-500",
+    bgColor: "bg-blue-500/10",
+    features: [
+      {
+        icon: Users,
+        title: "Attendee List",
+        description: "Comprehensive directory of all event participant profiles.",
+        gradient: "from-blue-500/20 to-sky-500/20",
+        iconColor: "text-blue-500",
+      },
+      {
+        icon: MessageSquare,
+        title: "Private Messages",
+        description: "In-app messaging for direct attendee communication.",
+        gradient: "from-purple-500/20 to-fuchsia-500/20",
+        iconColor: "text-purple-500",
+      },
+      {
+        icon: Target,
+        title: "Matching",
+        description: "Define interests to find and connect with compatible peers.",
+        gradient: "from-rose-500/20 to-pink-500/20",
+        iconColor: "text-rose-500",
+      },
+      {
+        icon: CalendarClock,
+        title: "1:1 Online Meetings",
+        description: "Request meetings in-person or via in-app video call.",
+        gradient: "from-cyan-500/20 to-sky-500/20",
+        iconColor: "text-cyan-500",
+      },
+      {
+        icon: Handshake,
+        title: "B2B Meetings",
+        description: "Schedule appointments with exhibitors and buyers.",
+        gradient: "from-blue-600/20 to-indigo-500/20",
+        iconColor: "text-blue-600",
+      },
+      {
+        icon: Lock,
+        title: "User Login",
+        description: "Private access with secure personal credentials.",
+        gradient: "from-slate-500/20 to-gray-500/20",
+        iconColor: "text-slate-500",
+      },
+      {
+        icon: QrCode,
+        title: "QR Code",
+        description: "Personalized QR for access control or digital business card.",
+        gradient: "from-gray-500/20 to-slate-500/20",
+        iconColor: "text-gray-600",
+      },
+    ],
   },
   {
-    icon: Bell,
-    title: "Push Notifications",
-    description: "Send instant notifications to attendees on their devices.",
-    gradient: "from-amber-500/20 to-orange-500/20",
-    iconColor: "text-amber-500",
-    category: "Basic",
+    name: "Interaction",
+    description: "Engage your audience with real-time tools",
+    icon: Zap,
+    accentColor: "text-amber-500",
+    bgColor: "bg-amber-500/10",
+    features: [
+      {
+        icon: MessageCircleQuestion,
+        title: "Q&A",
+        description: "Submit questions to speakers or moderators instantly from any device.",
+        gradient: "from-indigo-500/20 to-violet-500/20",
+        iconColor: "text-indigo-500",
+      },
+      {
+        icon: Vote,
+        title: "Live Voting",
+        description: "Real-time polling during sessions for instant audience voting.",
+        gradient: "from-indigo-500/20 to-blue-500/20",
+        iconColor: "text-indigo-500",
+      },
+      {
+        icon: MessagesSquare,
+        title: "Comment Wall",
+        description: "Open group chats for public discussions about the event.",
+        gradient: "from-orange-500/20 to-amber-500/20",
+        iconColor: "text-orange-500",
+      },
+      {
+        icon: Gamepad2,
+        title: "Gamification",
+        description: "Quizzes with live rankings rewarding fastest correct answers.",
+        gradient: "from-green-500/20 to-lime-500/20",
+        iconColor: "text-green-500",
+      },
+      {
+        icon: Star,
+        title: "Top Rated Questions",
+        description: "Upvote questions to create a prioritized topic list.",
+        gradient: "from-yellow-500/20 to-amber-500/20",
+        iconColor: "text-yellow-500",
+      },
+      {
+        icon: ClipboardList,
+        title: "Surveys",
+        description: "Share surveys with diverse question types for feedback.",
+        gradient: "from-emerald-500/20 to-green-500/20",
+        iconColor: "text-emerald-500",
+      },
+      {
+        icon: Bell,
+        title: "Push Notifications",
+        description: "Send instant notifications to attendees on their devices.",
+        gradient: "from-amber-500/20 to-orange-500/20",
+        iconColor: "text-amber-500",
+      },
+    ],
   },
   {
-    icon: LayoutDashboard,
-    title: "Dashboard & Menu",
-    description: "Customizable dashboard with icons and sections matching your brand.",
-    gradient: "from-purple-500/20 to-pink-500/20",
-    iconColor: "text-purple-500",
-    category: "Basic",
+    name: "Information",
+    description: "Deliver content and resources seamlessly",
+    icon: Info,
+    accentColor: "text-teal-500",
+    bgColor: "bg-teal-500/10",
+    features: [
+      {
+        icon: Calendar,
+        title: "Agenda",
+        description: "Display event agenda with session filtering by category or day.",
+        gradient: "from-blue-500/20 to-cyan-500/20",
+        iconColor: "text-blue-500",
+      },
+      {
+        icon: Mic2,
+        title: "Speakers",
+        description: "Speaker profiles with bios and scheduled sessions.",
+        gradient: "from-green-500/20 to-emerald-500/20",
+        iconColor: "text-green-500",
+      },
+      {
+        icon: LayoutDashboard,
+        title: "Dashboard & Menu",
+        description: "Customizable dashboard with icons and sections matching your brand.",
+        gradient: "from-purple-500/20 to-pink-500/20",
+        iconColor: "text-purple-500",
+      },
+      {
+        icon: MapPin,
+        title: "Maps & Floor Plans",
+        description: "Display geolocated maps and multi-room venue layouts.",
+        gradient: "from-teal-500/20 to-cyan-500/20",
+        iconColor: "text-teal-500",
+      },
+      {
+        icon: FileText,
+        title: "Documents & Files",
+        description: "Share resources for users to view and download.",
+        gradient: "from-slate-500/20 to-zinc-500/20",
+        iconColor: "text-slate-400",
+      },
+      {
+        icon: BookOpen,
+        title: "Scientific Abstracts",
+        description: "Publish and sort Oral and Poster abstracts by category.",
+        gradient: "from-teal-500/20 to-emerald-500/20",
+        iconColor: "text-teal-500",
+      },
+      {
+        icon: Video,
+        title: "Video Gallery",
+        description: "Access on-demand event content directly within the app.",
+        gradient: "from-red-500/20 to-rose-500/20",
+        iconColor: "text-red-500",
+      },
+      {
+        icon: Images,
+        title: "Photo Gallery",
+        description: "Organize and display images by category.",
+        gradient: "from-violet-500/20 to-purple-500/20",
+        iconColor: "text-violet-500",
+      },
+      {
+        icon: Share2,
+        title: "Social Media",
+        description: "Connect social links and external resources seamlessly.",
+        gradient: "from-pink-500/20 to-rose-500/20",
+        iconColor: "text-pink-500",
+      },
+      {
+        icon: Briefcase,
+        title: "Personal Area",
+        description: "Private documents linked to each attendee (e.g., travel tickets).",
+        gradient: "from-zinc-500/20 to-slate-500/20",
+        iconColor: "text-zinc-500",
+      },
+      {
+        icon: Radio,
+        title: "Live Broadcasting",
+        description: "Watch live sessions directly from the schedule in-app.",
+        gradient: "from-red-500/20 to-orange-500/20",
+        iconColor: "text-red-600",
+      },
+    ],
   },
   {
-    icon: Mic2,
-    title: "Speakers",
-    description: "Speaker profiles with bios and scheduled sessions.",
-    gradient: "from-green-500/20 to-emerald-500/20",
-    iconColor: "text-green-500",
-    category: "Basic",
-  },
-  {
-    icon: MessageCircleQuestion,
-    title: "Q&A",
-    description: "Submit questions to speakers or moderators instantly from any device.",
-    gradient: "from-indigo-500/20 to-violet-500/20",
-    iconColor: "text-indigo-500",
-    category: "Basic",
-  },
-  {
-    icon: MapPin,
-    title: "Maps & Floor Plans",
-    description: "Display geolocated maps and multi-room venue layouts.",
-    gradient: "from-teal-500/20 to-cyan-500/20",
-    iconColor: "text-teal-500",
-    category: "Basic",
-  },
-  {
-    icon: Share2,
-    title: "Social Media",
-    description: "Connect social links and external resources seamlessly.",
-    gradient: "from-pink-500/20 to-rose-500/20",
-    iconColor: "text-pink-500",
-    category: "Basic",
-  },
-  {
-    icon: FileText,
-    title: "Documents & Files",
-    description: "Share resources for users to view and download.",
-    gradient: "from-slate-500/20 to-zinc-500/20",
-    iconColor: "text-slate-400",
-    category: "Basic",
-  },
-  // Pro Plan Features
-  {
-    icon: Building2,
-    title: "Exhibitors",
-    description: "Manage company details, representatives, documents, and videos.",
-    gradient: "from-blue-500/20 to-indigo-500/20",
-    iconColor: "text-blue-600",
-    category: "Pro",
-  },
-  {
-    icon: Award,
-    title: "Sponsors",
-    description: "Showcase sponsors by category with logo carousels on dashboard.",
-    gradient: "from-amber-500/20 to-yellow-500/20",
-    iconColor: "text-amber-600",
-    category: "Pro",
-  },
-  {
-    icon: Video,
-    title: "Video Gallery",
-    description: "Access on-demand event content directly within the app.",
-    gradient: "from-red-500/20 to-rose-500/20",
-    iconColor: "text-red-500",
-    category: "Pro",
-  },
-  {
-    icon: Images,
-    title: "Photo Gallery",
-    description: "Organize and display images by category.",
-    gradient: "from-violet-500/20 to-purple-500/20",
-    iconColor: "text-violet-500",
-    category: "Pro",
-  },
-  {
-    icon: ClipboardList,
-    title: "Surveys",
-    description: "Share surveys with diverse question types for feedback.",
-    gradient: "from-emerald-500/20 to-green-500/20",
-    iconColor: "text-emerald-500",
-    category: "Pro",
-  },
-  // Networking Plan Features
-  {
-    icon: Lock,
-    title: "User Login",
-    description: "Private access with secure personal credentials.",
-    gradient: "from-slate-500/20 to-gray-500/20",
-    iconColor: "text-slate-500",
-    category: "Networking",
-  },
-  {
-    icon: Users,
-    title: "Attendee List",
-    description: "Comprehensive directory of all event participant profiles.",
-    gradient: "from-blue-500/20 to-sky-500/20",
-    iconColor: "text-blue-500",
-    category: "Networking",
-  },
-  {
-    icon: MessageSquare,
-    title: "Private Messages",
-    description: "In-app messaging for direct attendee communication.",
-    gradient: "from-purple-500/20 to-fuchsia-500/20",
-    iconColor: "text-purple-500",
-    category: "Networking",
-  },
-  {
-    icon: MessagesSquare,
-    title: "Comment Wall",
-    description: "Open group chats for public discussions about the event.",
-    gradient: "from-orange-500/20 to-amber-500/20",
-    iconColor: "text-orange-500",
-    category: "Networking",
-  },
-  // Add-ons
-  {
-    icon: Target,
-    title: "Matching",
-    description: "Define interests to find and connect with compatible peers.",
-    gradient: "from-rose-500/20 to-pink-500/20",
-    iconColor: "text-rose-500",
-    category: "Add-on",
-  },
-  {
-    icon: Vote,
-    title: "Live Voting",
-    description: "Real-time polling during sessions for instant audience voting.",
-    gradient: "from-indigo-500/20 to-blue-500/20",
-    iconColor: "text-indigo-500",
-    category: "Add-on",
-  },
-  {
-    icon: BookOpen,
-    title: "Scientific Abstracts",
-    description: "Publish and sort Oral and Poster abstracts by category.",
-    gradient: "from-teal-500/20 to-emerald-500/20",
-    iconColor: "text-teal-500",
-    category: "Add-on",
-  },
-  {
-    icon: Gamepad2,
-    title: "Gamification",
-    description: "Quizzes with live rankings rewarding fastest correct answers.",
-    gradient: "from-green-500/20 to-lime-500/20",
-    iconColor: "text-green-500",
-    category: "Add-on",
-  },
-  {
-    icon: CalendarClock,
-    title: "1:1 Online Meetings",
-    description: "Request meetings in-person or via in-app video call.",
-    gradient: "from-cyan-500/20 to-sky-500/20",
-    iconColor: "text-cyan-500",
-    category: "Add-on",
-  },
-  {
-    icon: Star,
-    title: "Top Rated Questions",
-    description: "Upvote questions to create a prioritized topic list.",
-    gradient: "from-yellow-500/20 to-amber-500/20",
-    iconColor: "text-yellow-500",
-    category: "Add-on",
-  },
-  {
-    icon: Briefcase,
-    title: "Personal Area",
-    description: "Private documents linked to each attendee (e.g., travel tickets).",
-    gradient: "from-zinc-500/20 to-slate-500/20",
-    iconColor: "text-zinc-500",
-    category: "Add-on",
-  },
-  {
-    icon: Radio,
-    title: "Live Broadcasting",
-    description: "Watch live sessions directly from the schedule in-app.",
-    gradient: "from-red-500/20 to-orange-500/20",
-    iconColor: "text-red-600",
-    category: "Add-on",
-  },
-  {
-    icon: Handshake,
-    title: "B2B Meetings",
-    description: "Schedule appointments with exhibitors and buyers.",
-    gradient: "from-blue-600/20 to-indigo-500/20",
-    iconColor: "text-blue-600",
-    category: "Add-on",
-  },
-  {
-    icon: QrCode,
-    title: "QR Code",
-    description: "Personalized QR for access control or digital business card.",
-    gradient: "from-gray-500/20 to-slate-500/20",
-    iconColor: "text-gray-600",
-    category: "Add-on",
-  },
-  {
-    icon: ScanLine,
-    title: "Access Control",
-    description: "Control access to your event or specific locations.",
-    gradient: "from-violet-500/20 to-indigo-500/20",
-    iconColor: "text-violet-600",
-    category: "Add-on",
-  },
-  {
-    icon: BadgeCheck,
-    title: "Accreditation",
-    description: "Send and print personalized badges for every attendee.",
-    gradient: "from-emerald-500/20 to-teal-500/20",
-    iconColor: "text-emerald-600",
-    category: "Add-on",
+    name: "Monetization",
+    description: "Maximize sponsor and exhibitor value",
+    icon: DollarSign,
+    accentColor: "text-emerald-500",
+    bgColor: "bg-emerald-500/10",
+    features: [
+      {
+        icon: Award,
+        title: "Sponsors",
+        description: "Showcase sponsors by category with logo carousels on dashboard.",
+        gradient: "from-amber-500/20 to-yellow-500/20",
+        iconColor: "text-amber-600",
+      },
+      {
+        icon: Building2,
+        title: "Exhibitors",
+        description: "Manage company details, representatives, documents, and videos.",
+        gradient: "from-blue-500/20 to-indigo-500/20",
+        iconColor: "text-blue-600",
+      },
+      {
+        icon: ScanLine,
+        title: "Access Control",
+        description: "Control access to your event or specific locations.",
+        gradient: "from-violet-500/20 to-indigo-500/20",
+        iconColor: "text-violet-600",
+      },
+      {
+        icon: BadgeCheck,
+        title: "Accreditation",
+        description: "Send and print personalized badges for every attendee.",
+        gradient: "from-emerald-500/20 to-teal-500/20",
+        iconColor: "text-emerald-600",
+      },
+    ],
   },
 ];
 
@@ -298,42 +305,68 @@ export const FeaturesSection = () => {
             Everything Your Event Needs
           </h2>
           <p className="text-lg text-muted-foreground">
-            From networking to gamification, our platform covers every aspect of modern event management.
+            From networking to monetization, our platform covers every aspect of modern event management.
           </p>
         </motion.div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-          {features.map((feature, index) => (
+        {/* Feature Categories */}
+        <div className="space-y-16">
+          {featureCategories.map((category, categoryIndex) => (
             <motion.div
-              key={feature.title}
+              key={category.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.03 * index }}
-              className="group relative"
+              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
             >
-              <div className="h-full p-5 rounded-2xl bg-card border border-border/50 hover:border-accent/30 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5">
-                {/* Gradient Background on Hover */}
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                
-                {/* Content */}
-                <div className="relative">
-                  {/* Icon */}
-                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                    <feature.icon className={`w-5 h-5 ${feature.iconColor}`} />
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-base font-bold text-foreground mb-1.5 group-hover:text-accent transition-colors duration-300">
-                    {feature.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
+              {/* Category Header */}
+              <div className="flex items-center gap-3 mb-6">
+                <div className={`w-10 h-10 rounded-xl ${category.bgColor} flex items-center justify-center`}>
+                  <category.icon className={`w-5 h-5 ${category.accentColor}`} />
                 </div>
+                <div>
+                  <h3 className={`text-xl font-bold ${category.accentColor}`}>
+                    {category.name}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">{category.description}</p>
+                </div>
+              </div>
+
+              {/* Features Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                {category.features.map((feature, index) => (
+                  <motion.div
+                    key={feature.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: 0.03 * index }}
+                    className="group relative"
+                  >
+                    <div className="h-full p-5 rounded-2xl bg-card border border-border/50 hover:border-accent/30 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5">
+                      {/* Gradient Background on Hover */}
+                      <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                      
+                      {/* Content */}
+                      <div className="relative">
+                        {/* Icon */}
+                        <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                          <feature.icon className={`w-5 h-5 ${feature.iconColor}`} />
+                        </div>
+
+                        {/* Title */}
+                        <h4 className="text-base font-bold text-foreground mb-1.5 group-hover:text-accent transition-colors duration-300">
+                          {feature.title}
+                        </h4>
+
+                        {/* Description */}
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           ))}
@@ -345,7 +378,7 @@ export const FeaturesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-accent/10 via-tech-blue/10 to-accent/10 border border-accent/20"
+          className="mt-16 p-6 rounded-2xl bg-gradient-to-r from-accent/10 via-tech-blue/10 to-accent/10 border border-accent/20"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
@@ -353,8 +386,8 @@ export const FeaturesSection = () => {
               <div className="text-sm text-muted-foreground">Built-in Features</div>
             </div>
             <div>
-              <div className="text-2xl md:text-3xl font-bold text-accent">100%</div>
-              <div className="text-sm text-muted-foreground">Customizable</div>
+              <div className="text-2xl md:text-3xl font-bold text-accent">4</div>
+              <div className="text-sm text-muted-foreground">Feature Categories</div>
             </div>
             <div>
               <div className="text-2xl md:text-3xl font-bold text-accent">iOS & Android</div>
