@@ -22,13 +22,13 @@ export const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border shadow-sm"
     >
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="flex items-center justify-between h-36 md:h-44">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
             <img
               src={eventmagixLogo}
               alt="Eventmagix"
-              className="h-16 md:h-20 w-auto object-contain"
+              className="h-32 md:h-40 w-auto object-contain"
             />
           </a>
 
