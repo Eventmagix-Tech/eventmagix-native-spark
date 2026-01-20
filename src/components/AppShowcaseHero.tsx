@@ -6,11 +6,6 @@ import offlineAirplane from "@/assets/app-mockups/offline-airplane.jpg";
 
 
 export const AppShowcaseHero = () => {
-  const stats = [
-    { value: "60fps", label: "Smooth Performance" },
-    { value: "100%", label: "Offline Access" },
-    { value: "<2s", label: "Launch Time" },
-  ];
 
   return (
     <section className="py-24 md:py-32 bg-background relative overflow-hidden">
@@ -47,7 +42,7 @@ export const AppShowcaseHero = () => {
         </motion.div>
 
         {/* Main Visual Grid */}
-        <div className="grid lg:grid-cols-12 gap-6 md:gap-8 mb-16">
+        <div className="grid lg:grid-cols-12 gap-6 md:gap-8">
           {/* Left - Large Feature Card */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -159,30 +154,6 @@ export const AppShowcaseHero = () => {
           </div>
         </div>
 
-        {/* Stats Row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-wrap justify-center gap-8 md:gap-16"
-        >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-              className="text-center"
-            >
-              <div className="text-3xl md:text-4xl font-bold text-gradient mb-1">
-                {stat.value}
-              </div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );
