@@ -10,6 +10,7 @@ import cciLogo from "@/assets/clients/cci.png";
 import medtronicLogo from "@/assets/clients/medtronic.png";
 import audiLogo from "@/assets/clients/audi.jpg";
 import adfLogo from "@/assets/clients/adf.webp";
+import isbankLogo from "@/assets/clients/isbank.jpeg";
 
 const clients = [
   { name: "Wissen", logo: wissenLogo },
@@ -21,6 +22,7 @@ const clients = [
   { name: "Medtronic", logo: medtronicLogo },
   { name: "Audi", logo: audiLogo },
   { name: "Antalya Diplomacy Forum", logo: adfLogo },
+  { name: "İş Bankası", logo: isbankLogo },
 ];
 
 export const TrustSection = () => {
@@ -47,7 +49,7 @@ export const TrustSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-6 md:gap-8 items-center justify-items-center"
+          className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-6 md:gap-8 items-center justify-items-center"
         >
           {clients.map((client, index) => (
             <motion.div
