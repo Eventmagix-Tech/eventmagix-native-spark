@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Calendar,
   Bell,
@@ -35,7 +35,14 @@ import {
   Zap,
   Info,
   DollarSign,
+  ChevronDown,
 } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 // Features grouped by category
 const featureCategories = [
@@ -309,8 +316,8 @@ export const FeaturesSection = () => {
           </p>
         </motion.div>
 
-        {/* Feature Categories */}
-        <div className="space-y-16">
+        {/* Feature Categories as Accordion */}
+        <Accordion type="multiple" defaultValue={["Networking", "Interaction", "Information", "Monetization"]} className="space-y-4">
           {featureCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.name}
@@ -319,58 +326,64 @@ export const FeaturesSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
             >
-              {/* Category Header */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className={`w-10 h-10 rounded-xl ${category.bgColor} flex items-center justify-center`}>
-                  <category.icon className={`w-5 h-5 ${category.accentColor}`} />
-                </div>
-                <div>
-                  <h3 className={`text-xl font-bold ${category.accentColor}`}>
-                    {category.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">{category.description}</p>
-                </div>
-              </div>
-
-              {/* Features Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-                {category.features.map((feature, index) => (
-                  <motion.div
-                    key={feature.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 0.03 * index }}
-                    className="group relative"
-                  >
-                    <div className="h-full p-5 rounded-2xl bg-card border border-border/50 hover:border-accent/30 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5">
-                      {/* Gradient Background on Hover */}
-                      <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                      
-                      {/* Content */}
-                      <div className="relative">
-                        {/* Icon */}
-                        <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                          <feature.icon className={`w-5 h-5 ${feature.iconColor}`} />
-                        </div>
-
-                        {/* Title */}
-                        <h4 className="text-base font-bold text-foreground mb-1.5 group-hover:text-accent transition-colors duration-300">
-                          {feature.title}
-                        </h4>
-
-                        {/* Description */}
-                        <p className="text-xs text-muted-foreground leading-relaxed">
-                          {feature.description}
-                        </p>
-                      </div>
+              <AccordionItem 
+                value={category.name} 
+                className="border border-border/50 rounded-2xl overflow-hidden bg-card/50 backdrop-blur-sm"
+              >
+                <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-muted/30 transition-colors [&[data-state=open]>div>.chevron]:rotate-180">
+                  <div className="flex items-center gap-4 w-full">
+                    <div className={`w-12 h-12 rounded-xl ${category.bgColor} flex items-center justify-center shrink-0`}>
+                      <category.icon className={`w-6 h-6 ${category.accentColor}`} />
                     </div>
-                  </motion.div>
-                ))}
-              </div>
+                    <div className="text-left flex-1">
+                      <h3 className={`text-xl font-bold ${category.accentColor}`}>
+                        {category.name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">{category.description}</p>
+                    </div>
+                    <span className="text-sm font-medium text-muted-foreground bg-muted px-3 py-1 rounded-full">
+                      {category.features.length} features
+                    </span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6">
+                  {/* Features Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pt-4">
+                    {category.features.map((feature, index) => (
+                      <div
+                        key={feature.title}
+                        className="group relative"
+                      >
+                        <div className="h-full p-5 rounded-2xl bg-card border border-border/50 hover:border-accent/30 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5">
+                          {/* Gradient Background on Hover */}
+                          <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                          
+                          {/* Content */}
+                          <div className="relative">
+                            {/* Icon */}
+                            <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                              <feature.icon className={`w-5 h-5 ${feature.iconColor}`} />
+                            </div>
+
+                            {/* Title */}
+                            <h4 className="text-base font-bold text-foreground mb-1.5 group-hover:text-accent transition-colors duration-300">
+                              {feature.title}
+                            </h4>
+
+                            {/* Description */}
+                            <p className="text-xs text-muted-foreground leading-relaxed">
+                              {feature.description}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
             </motion.div>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   );
