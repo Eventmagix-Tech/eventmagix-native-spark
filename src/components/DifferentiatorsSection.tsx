@@ -24,6 +24,7 @@ const reasons = [
       "Your event never stops, even without internet. Full functionality in airplane mode, conference centers with poor WiFi, or remote venues. Content syncs automatically when connectivity returns.",
     image: offlineAirplane,
     imageAlt: "App working offline on airplane",
+    imageSize: "max-w-xs",
   },
   {
     number: "03",
@@ -126,7 +127,7 @@ export const DifferentiatorsSection = () => {
                       <img
                         src={reason.image}
                         alt={reason.imageAlt}
-                        className="w-full max-w-md mx-auto h-auto object-cover rounded-2xl shadow-xl"
+                        className={`w-full ${reason.imageSize || "max-w-md"} mx-auto h-auto object-cover rounded-2xl shadow-xl`}
                       />
                     </div>
                   </motion.div>
