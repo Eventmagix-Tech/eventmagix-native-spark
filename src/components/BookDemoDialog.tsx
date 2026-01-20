@@ -328,7 +328,12 @@ export const BookDemoDialog = ({ open, onOpenChange }: BookDemoDialogProps) => {
                     <div className="space-y-1 leading-none">
                       <FormLabel className="text-sm font-normal text-muted-foreground">
                         I agree to the processing of my personal data in accordance with the{" "}
-                        <a href="#" className="text-primary underline hover:no-underline">
+                        <a 
+                          href="https://eventmagix.com/privacy-policy.html" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-primary underline hover:no-underline"
+                        >
                           Privacy Policy
                         </a>
                         .*
