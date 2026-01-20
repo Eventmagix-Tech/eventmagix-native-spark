@@ -74,8 +74,7 @@ export const DifferentiatorsSection = () => {
             Why Eventmagix?
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            5 Reasons to Choose{" "}
-            <span className="text-gradient">Eventmagix</span>
+            5 Reasons to Choose
           </h2>
           <p className="text-lg text-muted-foreground">
             While others rely on web wrappers, we deliver true native apps that perform like nothing else on the market.
