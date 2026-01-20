@@ -4,10 +4,7 @@ import { TrustSection } from "@/components/TrustSection";
 import { DifferentiatorsSection } from "@/components/DifferentiatorsSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { PricingSection } from "@/components/PricingSection";
-import { AddonsSection } from "@/components/AddonsSection";
 import { Footer } from "@/components/Footer";
-import { AppJourneySection } from "@/components/AppJourneySection";
-import { AppFeaturesShowcase } from "@/components/AppFeaturesShowcase";
 
 const Index = () => {
   return (
@@ -17,11 +14,8 @@ const Index = () => {
         <HeroSection />
         <DifferentiatorsSection />
         <FeaturesSection />
-        <AppJourneySection />
-        <AppFeaturesShowcase />
         <TrustSection />
         <PricingSection />
-        <AddonsSection />
       </main>
       <Footer />
     </div>
