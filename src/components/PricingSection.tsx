@@ -6,7 +6,7 @@ const plans = [
   {
     name: "Basic",
     description: "Essential features for small events",
-    price: "Contact",
+    price: "",
     period: "per event",
     features: [
       "Dynamic Agenda",
@@ -21,7 +21,7 @@ const plans = [
   {
     name: "Pro",
     description: "Advanced tools for growing events",
-    price: "Contact",
+    price: "",
     period: "per event",
     features: [
       "Everything in Basic",
@@ -37,7 +37,7 @@ const plans = [
   {
     name: "Networking",
     description: "Full attendee engagement suite",
-    price: "Contact",
+    price: "",
     period: "per event",
     features: [
       "Everything in Pro",
@@ -53,7 +53,7 @@ const plans = [
   {
     name: "Complete",
     description: "The all-in-one powerhouse",
-    price: "Contact",
+    price: "",
     period: "per event",
     features: [
       "Everything in Networking",
