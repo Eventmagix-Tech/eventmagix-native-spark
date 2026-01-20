@@ -8,6 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { BookDemoDialog } from "@/components/BookDemoDialog";
 import eventNetworking from "@/assets/event-networking.jpg";
 import eventKeynote from "@/assets/event-keynote.jpg";
 import eventExpo from "@/assets/event-expo.jpg";
@@ -15,6 +16,7 @@ import dashboardApp from "@/assets/dashboard-app.jpg";
 
 export const HeroSection = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
 
   return (
     <section className="relative min-h-screen pt-24 overflow-hidden gradient-hero">
@@ -59,7 +61,7 @@ export const HeroSection = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="accent" size="lg" className="group">
+              <Button variant="accent" size="lg" className="group" onClick={() => setIsDemoOpen(true)}>
                 Book a Demo
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -208,6 +210,9 @@ export const HeroSection = () => {
           </div>
         </DialogContent>
       </Dialog>
+
+      {/* Book Demo Dialog */}
+      <BookDemoDialog open={isDemoOpen} onOpenChange={setIsDemoOpen} />
     </section>
   );
 };
