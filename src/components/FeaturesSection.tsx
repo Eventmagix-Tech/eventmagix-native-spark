@@ -371,34 +371,6 @@ export const FeaturesSection = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Bottom Stats Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-16 p-6 rounded-2xl bg-gradient-to-r from-accent/10 via-tech-blue/10 to-accent/10 border border-accent/20"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <div className="text-2xl md:text-3xl font-bold text-accent">29+</div>
-              <div className="text-sm text-muted-foreground">Built-in Features</div>
-            </div>
-            <div>
-              <div className="text-2xl md:text-3xl font-bold text-accent">4</div>
-              <div className="text-sm text-muted-foreground">Feature Categories</div>
-            </div>
-            <div>
-              <div className="text-2xl md:text-3xl font-bold text-accent">iOS & Android</div>
-              <div className="text-sm text-muted-foreground">Native Apps</div>
-            </div>
-            <div>
-              <div className="text-2xl md:text-3xl font-bold text-accent">99.9%</div>
-              <div className="text-sm text-muted-foreground">Uptime SLA</div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
