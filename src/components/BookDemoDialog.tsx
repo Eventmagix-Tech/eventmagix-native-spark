@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { Check, ChevronsUpDown } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -27,7 +28,21 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { useToast } from "@/hooks/use-toast";
+import { cn } from "@/lib/utils";
 
 const countryCodes = [
   { code: "+1", country: "US/Canada" },
@@ -95,6 +110,7 @@ interface BookDemoDialogProps {
 export const BookDemoDialog = ({ open, onOpenChange }: BookDemoDialogProps) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [countryCodeOpen, setCountryCodeOpen] = useState(false);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -193,21 +209,52 @@ export const BookDemoDialog = ({ open, onOpenChange }: BookDemoDialogProps) => {
                   control={form.control}
                   name="countryCode"
                   render={({ field }) => (
-                    <FormItem className="w-32">
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Code" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent className="bg-background z-50">
-                          {countryCodes.map((country) => (
-                            <SelectItem key={country.code} value={country.code}>
-                              {country.code} {country.country}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                    <FormItem className="w-40">
+                      <Popover open={countryCodeOpen} onOpenChange={setCountryCodeOpen}>
+                        <PopoverTrigger asChild>
+                          <FormControl>
+                            <Button
+                              variant="outline"
+                              role="combobox"
+                              aria-expanded={countryCodeOpen}
+                              className="w-full justify-between font-normal"
+                            >
+                              {field.value
+                                ? countryCodes.find((c) => c.code === field.value)?.code + " " + countryCodes.find((c) => c.code === field.value)?.country
+                                : "Select code"}
+                              <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                            </Button>
+                          </FormControl>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-56 p-0 bg-background z-50" align="start">
+                          <Command>
+                            <CommandInput placeholder="Search country..." />
+                            <CommandList>
+                              <CommandEmpty>No country found.</CommandEmpty>
+                              <CommandGroup>
+                                {countryCodes.map((country) => (
+                                  <CommandItem
+                                    key={country.code}
+                                    value={`${country.code} ${country.country}`}
+                                    onSelect={() => {
+                                      field.onChange(country.code);
+                                      setCountryCodeOpen(false);
+                                    }}
+                                  >
+                                    <Check
+                                      className={cn(
+                                        "mr-2 h-4 w-4",
+                                        field.value === country.code ? "opacity-100" : "opacity-0"
+                                      )}
+                                    />
+                                    {country.code} {country.country}
+                                  </CommandItem>
+                                ))}
+                              </CommandGroup>
+                            </CommandList>
+                          </Command>
+                        </PopoverContent>
+                      </Popover>
                       <FormMessage />
                     </FormItem>
                   )}
