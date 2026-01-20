@@ -11,6 +11,7 @@ import medtronicLogo from "@/assets/clients/medtronic.png";
 import audiLogo from "@/assets/clients/audi.jpg";
 import adfLogo from "@/assets/clients/adf.webp";
 import isbankLogo from "@/assets/clients/isbank.jpeg";
+import magnumLogo from "@/assets/clients/magnum.png";
 
 const clients = [
   { name: "Wissen", logo: wissenLogo },
@@ -23,6 +24,7 @@ const clients = [
   { name: "Audi", logo: audiLogo },
   { name: "Antalya Diplomacy Forum", logo: adfLogo },
   { name: "İş Bankası", logo: isbankLogo },
+  { name: "Magnum", logo: magnumLogo },
 ];
 
 export const TrustSection = () => {
