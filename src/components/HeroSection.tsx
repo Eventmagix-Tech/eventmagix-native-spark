@@ -4,6 +4,7 @@ import { ArrowRight, Play } from "lucide-react";
 import eventNetworking from "@/assets/event-networking.jpg";
 import eventKeynote from "@/assets/event-keynote.jpg";
 import eventExpo from "@/assets/event-expo.jpg";
+import dashboardApp from "@/assets/dashboard-app.jpg";
 
 export const HeroSection = () => {
   return (
@@ -152,28 +153,24 @@ export const HeroSection = () => {
                 </div>
               </motion.div>
 
-              {/* Stats Card */}
+              {/* App Dashboard Image */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.5 }}
-                className="col-span-7 row-span-2 row-start-5 relative"
+                className="col-span-7 row-span-2 row-start-5 relative group"
               >
-                <div className="h-full glass-card rounded-2xl p-4 flex items-center justify-around bg-white/10 backdrop-blur-xl border border-white/20">
-                  <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-white">50+</div>
-                    <div className="text-xs text-white/60">Countries</div>
-                  </div>
-                  <div className="w-px h-8 bg-white/20" />
-                  <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-white">10K+</div>
-                    <div className="text-xs text-white/60">Sessions</div>
-                  </div>
-                  <div className="w-px h-8 bg-white/20" />
-                  <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-white">98%</div>
-                    <div className="text-xs text-white/60">Satisfaction</div>
-                  </div>
+                <div className="absolute inset-0 bg-tech-blue/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
+                <img
+                  src={dashboardApp}
+                  alt="Event app dashboard"
+                  className="relative w-full h-full object-cover rounded-2xl shadow-2xl ring-1 ring-white/10 group-hover:ring-white/20 transition-all duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent rounded-2xl" />
+                <div className="absolute bottom-3 left-3 right-3">
+                  <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-medium">
+                    Native App
+                  </span>
                 </div>
               </motion.div>
             </div>
