@@ -12,7 +12,7 @@ import { BookDemoDialog } from "@/components/BookDemoDialog";
 import eventNetworking from "@/assets/event-networking.jpg";
 import eventKeynote from "@/assets/event-keynote.jpg";
 import eventExpo from "@/assets/event-expo.jpg";
-import dashboardApp from "@/assets/dashboard-app.jpg";
+import nativeAppHero from "@/assets/app-mockups/native-app-hero.jpg";
 
 export const HeroSection = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -173,8 +173,8 @@ export const HeroSection = () => {
               >
                 <div className="absolute inset-0 bg-tech-blue/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
                 <img
-                  src={dashboardApp}
-                  alt="Event app dashboard"
+                  src={nativeAppHero}
+                  alt="Native app QR check-in"
                   className="relative w-full h-full object-cover rounded-2xl shadow-2xl ring-1 ring-white/10 group-hover:ring-white/20 transition-all duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent rounded-2xl" />
