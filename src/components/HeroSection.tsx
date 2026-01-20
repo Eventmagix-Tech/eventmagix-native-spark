@@ -95,14 +95,7 @@ export const HeroSection = () => {
                 />
                 
                 {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent rounded-3xl" />
-                
-                {/* Label */}
-                <div className="absolute bottom-6 left-6 right-6">
-                  <span className="inline-block px-4 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-semibold">
-                    Access Content
-                  </span>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent rounded-3xl" />
               </motion.div>
               
               {/* Decorative Elements */}
