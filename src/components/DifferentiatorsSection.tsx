@@ -196,23 +196,6 @@ export const DifferentiatorsSection = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center mt-12"
-        >
-          <a
-            href="#features"
-            className="inline-flex items-center gap-2 text-accent font-semibold hover:underline"
-          >
-            Explore all features
-            <ArrowRight className="w-4 h-4" />
-          </a>
-        </motion.div>
       </div>
     </section>
   );
