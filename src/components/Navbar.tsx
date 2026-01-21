@@ -7,7 +7,6 @@ import eventmagixLogo from "@/assets/eventmagix-logo-white.png";
 const navLinks = [
   { name: "Features", href: "#features" },
   { name: "Pricing", href: "#pricing" },
-  { name: "Add-ons", href: "#addons" },
   { name: "Contact", href: "#footer" },
 ];
 
