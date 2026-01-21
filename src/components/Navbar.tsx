@@ -67,14 +67,7 @@ export const Navbar = () => {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="text-white/70 hover:text-white hover:bg-white/10 border-0"
-            >
-              View Plans
-            </Button>
+          <div className="hidden md:flex items-center">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
@@ -128,10 +121,7 @@ export const Navbar = () => {
                   {link.name}
                 </motion.a>
               ))}
-              <div className="flex flex-col gap-3 pt-4 mt-2 border-t border-white/10">
-                <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10">
-                  View Plans
-                </Button>
+              <div className="pt-4 mt-2 border-t border-white/10">
                 <Button variant="accent" className="w-full">
                   Book a Demo
                 </Button>
