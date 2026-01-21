@@ -61,12 +61,6 @@ const plans = [
     features: [
       "Everything in Pro",
       "Everything in Networking",
-      "Live Q&A & Polling",
-      "Gamification & Quizzes",
-      "Lead Retrieval",
-      "Live Streaming",
-      "White Label Option",
-      "Priority Support",
     ],
     cta: "Book a Demo",
     popular: false,
