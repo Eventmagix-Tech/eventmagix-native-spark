@@ -13,6 +13,8 @@ const plans = [
       "Speaker Profiles",
       "Interactive Maps",
       "Push Notifications",
+      "Ask to Speaker",
+      "Multi-language",
       "Basic Analytics",
     ],
     cta: "Get Started",
