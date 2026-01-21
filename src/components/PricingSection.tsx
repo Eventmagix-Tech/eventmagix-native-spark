@@ -59,6 +59,7 @@ const plans = [
     price: "",
     period: "per event",
     features: [
+      "Everything in Pro",
       "Everything in Networking",
       "Live Q&A & Polling",
       "Gamification & Quizzes",
