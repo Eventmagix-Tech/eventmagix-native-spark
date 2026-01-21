@@ -317,7 +317,7 @@ export const FeaturesSection = () => {
         </motion.div>
 
         {/* Feature Categories as Accordion */}
-        <Accordion type="multiple" defaultValue={["Networking", "Interaction", "Information", "Monetization"]} className="space-y-4">
+        <Accordion type="multiple" defaultValue={[]} className="space-y-4">
           {featureCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.name}
