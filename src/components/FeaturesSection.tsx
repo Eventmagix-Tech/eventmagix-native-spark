@@ -289,7 +289,7 @@ const featureCategories = [
 
 export const FeaturesSection = () => {
   return (
-    <section className="pt-8 md:pt-12 pb-20 md:pb-28 bg-background relative overflow-hidden" id="features">
+    <section className="pt-6 md:pt-8 pb-16 md:pb-20 bg-background relative overflow-hidden" id="features">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--accent)/0.08),transparent_60%)]" />
       <div className="absolute top-1/4 -left-32 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
