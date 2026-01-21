@@ -71,7 +71,7 @@ const plans = [
 
 export const PricingSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-background" id="pricing">
+    <section className="py-16 md:py-20 bg-background" id="pricing">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div

@@ -85,7 +85,7 @@ export const AudienceSection = () => {
   };
 
   return (
-    <section className="pt-8 md:pt-12 pb-20 md:pb-28 bg-gradient-to-b from-background to-muted/30" id="audience">
+    <section className="pt-6 md:pt-8 pb-16 md:pb-20 bg-gradient-to-b from-background to-muted/30" id="audience">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div

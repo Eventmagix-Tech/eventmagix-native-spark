@@ -23,7 +23,7 @@ export const HeroSection = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-tech-blue/10 rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: "1.5s" }} />
       </div>
 
-      <div className="container relative mx-auto px-4 py-16 md:py-20 lg:py-24">
+      <div className="container relative mx-auto px-4 py-12 md:py-16 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text Content */}
           <motion.div

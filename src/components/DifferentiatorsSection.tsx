@@ -59,7 +59,7 @@ export const DifferentiatorsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="py-16 md:py-20 bg-background relative overflow-hidden" id="why">
+    <section className="py-12 md:py-16 bg-background relative overflow-hidden" id="why">
       {/* Subtle Background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--accent)/0.03),transparent_60%)]" />
 
