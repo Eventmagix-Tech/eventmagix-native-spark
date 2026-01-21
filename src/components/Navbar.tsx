@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import eventmagixLogo from "@/assets/eventmagix-logo.png";
+import eventmagixLogo from "@/assets/eventmagix-logo-white.png";
 
 const navLinks = [
   { name: "Features", href: "#features" },
@@ -46,7 +46,7 @@ export const Navbar = () => {
             <img
               src={eventmagixLogo}
               alt="Eventmagix"
-              className="h-12 md:h-14 w-auto object-contain brightness-0 invert"
+              className="h-10 md:h-12 w-auto object-contain"
             />
           </motion.a>
 
