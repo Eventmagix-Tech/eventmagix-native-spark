@@ -179,7 +179,7 @@ export const AudienceSection = () => {
                   <div className="flex flex-col md:flex-row gap-8 items-start">
                     <div className="flex-shrink-0">
                       {eventFormats[currentSlide].image ? (
-                        <div className="w-32 md:w-40 aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
+                        <div className="w-20 h-20 rounded-xl overflow-hidden">
                           <img 
                             src={eventFormats[currentSlide].image} 
                             alt={eventFormats[currentSlide].title}
