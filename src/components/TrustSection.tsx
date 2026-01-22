@@ -13,8 +13,6 @@ import isbankLogo from "@/assets/clients/isbank.jpeg";
 import magnumLogo from "@/assets/clients/magnum.png";
 
 const clients = [
-  { name: "Wissen", logo: wissenLogo },
-  { name: "Sadberk Hanım Museum", logo: sadberkLogo },
   { name: "Bosch", logo: boschLogo },
   { name: "Yamaha", logo: yamahaLogo },
   { name: "CCI", logo: cciLogo },
