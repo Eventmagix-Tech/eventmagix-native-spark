@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
 import eventmagixLogo from "@/assets/eventmagix-logo.png";
 
 const footerLinks = {
@@ -27,36 +26,6 @@ const footerLinks = {
 export const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground" id="footer">
-      {/* CTA Section */}
-      <div className="border-b border-white/10">
-        <div className="container mx-auto px-4 py-16 md:py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Ready to Transform Your Event?
-            </h2>
-            <p className="text-lg text-white/70 mb-8">
-              Join hundreds of event organizers who trust Eventmagix to deliver
-              unforgettable mobile experiences.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="accent" size="lg" className="group">
-                Book a Demo
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="heroOutline" size="lg">
-                View Plans
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
