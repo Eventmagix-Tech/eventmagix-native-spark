@@ -5,18 +5,28 @@ import {
   Building2, 
   GraduationCap, 
   Megaphone,
-  CalendarDays,
   Store,
   Briefcase,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  LucideIcon
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import conferenceImage from "@/assets/events/conference.png";
 
-const eventFormats = [
+interface EventFormat {
+  id: string;
+  icon?: LucideIcon;
+  image?: string;
+  title: string;
+  description: string;
+  highlights: string[];
+}
+
+const eventFormats: EventFormat[] = [
   {
     id: "conferences",
-    icon: CalendarDays,
+    image: conferenceImage,
     title: "Conferences & Congresses",
     description: "Designed for large-scale, multi-session professional events. Elevate attendee experience with dynamic agendas, speaker profiles, and interactive session tracking.",
     highlights: ["Parallel Sessions", "Personal Agenda", "Live Q&A"]
@@ -167,12 +177,22 @@ export const AudienceSection = () => {
                 <div className="bg-card border border-border rounded-2xl p-8 md:p-10">
                   <div className="flex flex-col md:flex-row gap-8 items-start">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                        {(() => {
-                          const Icon = eventFormats[currentSlide].icon;
-                          return <Icon className="w-8 h-8 text-white" />;
-                        })()}
-                      </div>
+                      {eventFormats[currentSlide].image ? (
+                        <div className="w-20 h-20 rounded-xl overflow-hidden">
+                          <img 
+                            src={eventFormats[currentSlide].image} 
+                            alt={eventFormats[currentSlide].title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                          {(() => {
+                            const Icon = eventFormats[currentSlide].icon;
+                            return Icon ? <Icon className="w-8 h-8 text-white" /> : null;
+                          })()}
+                        </div>
+                      )}
                     </div>
                     <div className="flex-grow">
                       <h3 className="text-2xl font-bold text-foreground mb-3">
