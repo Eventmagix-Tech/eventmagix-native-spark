@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import conferenceImage from "@/assets/events/conference.png";
+import corporateImage from "@/assets/events/corporate.png";
 
 interface EventFormat {
   id: string;
@@ -40,7 +41,7 @@ const eventFormats: EventFormat[] = [
   },
   {
     id: "corporate",
-    icon: Briefcase,
+    image: corporateImage,
     title: "Corporate Events",
     description: "Ideal for internal meetings, product launches, and training programs. Custom branding, secure access, and detailed reporting capabilities.",
     highlights: ["White Label", "Multi-Language", "Detailed Analytics"]
