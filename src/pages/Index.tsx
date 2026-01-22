@@ -16,8 +16,8 @@ const Index = () => {
         <DifferentiatorsSection />
         <FeaturesSection />
         <AudienceSection />
-        <TrustSection />
         <PricingSection />
+        <TrustSection />
       </main>
       <Footer />
     </div>
