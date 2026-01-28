@@ -5,26 +5,24 @@ import {
   Building2, 
   GraduationCap, 
   Megaphone,
+  Store,
+  Briefcase,
+  ChevronLeft,
+  ChevronRight,
   LucideIcon
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import conferenceImage from "@/assets/events/conference.png";
 import corporateImage from "@/assets/events/corporate.png";
 import tradeShowsImage from "@/assets/events/trade-shows.png";
 
 interface EventFormat {
   id: string;
-  image: string;
+  icon?: LucideIcon;
+  image?: string;
   title: string;
   description: string;
   highlights: string[];
-}
-
-interface AttendeeType {
-  id: string;
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  benefits: string[];
 }
 
 const eventFormats: EventFormat[] = [
@@ -33,59 +31,54 @@ const eventFormats: EventFormat[] = [
     image: conferenceImage,
     title: "Conferences & Congresses",
     description: "Designed for large-scale, multi-session professional events. Elevate attendee experience with dynamic agendas, speaker profiles, and interactive session tracking.",
-    highlights: ["Parallel Sessions", "Personal Agenda", "Live Q&A", "Speaker Profiles"]
+    highlights: ["Parallel Sessions", "Personal Agenda", "Live Q&A"]
   },
   {
     id: "expos",
     image: tradeShowsImage,
     title: "Trade Shows & Expos",
     description: "Optimized for exhibitions, booths, and B2B meetings. Facilitate networking with interactive maps, exhibitor listings, and appointment scheduling.",
-    highlights: ["Interactive Floor Map", "Lead Retrieval", "B2B Meetings", "V-Card Exchange"]
+    highlights: ["Interactive Floor Map", "Lead Retrieval", "B2B Meetings", "V-Card"]
   },
   {
     id: "corporate",
     image: corporateImage,
     title: "Corporate Events",
     description: "Ideal for internal meetings, product launches, and training programs. Custom branding, secure access, and detailed reporting capabilities.",
-    highlights: ["White Label", "Multi-Language", "Detailed Analytics", "Secure Access"]
+    highlights: ["White Label", "Multi-Language", "Detailed Analytics"]
   }
 ];
 
-const attendeeTypes: AttendeeType[] = [
+const attendeeTypes = [
   {
     id: "academics",
     icon: GraduationCap,
     title: "Academics & Researchers",
-    description: "Follow presentations, view abstracts, and connect with colleagues at congresses and symposiums.",
-    benefits: ["Abstract browsing", "Session bookmarking", "Peer networking", "Certificate access"]
+    description: "Follow presentations, view abstracts, and connect with colleagues at congresses and symposiums."
   },
   {
     id: "professionals",
     icon: Users,
     title: "Industry Professionals",
-    description: "A platform for corporate decision-makers and experts to network, discover content, and create business opportunities.",
-    benefits: ["Personalized agenda", "Meeting scheduler", "Content library", "Lead exchange"]
+    description: "A platform for corporate decision-makers and experts to network, discover content, and create business opportunities."
   },
   {
     id: "sponsors",
     icon: Megaphone,
     title: "Sponsors & Exhibitors",
-    description: "Brand visibility, lead collection, and one-on-one meeting opportunities with potential clients.",
-    benefits: ["Lead capture", "Brand placement", "Analytics dashboard", "ROI tracking"]
+    description: "Brand visibility, lead collection, and one-on-one meeting opportunities with potential clients."
   },
   {
     id: "organizers",
     icon: Building2,
     title: "Event Organizers",
-    description: "Real-time management, analytics, and attendee communication tools for PCOs and event agencies.",
-    benefits: ["Live analytics", "Push notifications", "Content management", "Reporting tools"]
+    description: "Real-time management, analytics, and attendee communication tools for PCOs and event agencies."
   }
 ];
 
 export const AudienceSection = () => {
   const [activeTab, setActiveTab] = useState<"formats" | "attendees">("formats");
-  const [activeFormatIndex, setActiveFormatIndex] = useState(0);
-  const [activeAttendeeIndex, setActiveAttendeeIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const tabs = [
     { id: "formats" as const, label: "Event Formats" },
@@ -93,11 +86,18 @@ export const AudienceSection = () => {
   ];
 
   const currentItems = activeTab === "formats" ? eventFormats : attendeeTypes;
-  const currentIndex = activeTab === "formats" ? activeFormatIndex : activeAttendeeIndex;
-  const setCurrentIndex = activeTab === "formats" ? setActiveFormatIndex : setActiveAttendeeIndex;
+  const maxSlide = currentItems.length - 1;
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev < maxSlide ? prev + 1 : 0));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev > 0 ? prev - 1 : maxSlide));
+  };
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-background to-muted/30" id="audience">
+    <section className="pt-6 md:pt-8 pb-16 md:pb-20 bg-gradient-to-b from-background to-muted/30" id="audience">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -130,7 +130,10 @@ export const AudienceSection = () => {
             {tabs.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => {
+                  setActiveTab(tab.id);
+                  setCurrentSlide(0);
+                }}
                 className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                   activeTab === tab.id
                     ? "bg-primary text-primary-foreground shadow-md"
@@ -143,110 +146,68 @@ export const AudienceSection = () => {
           </div>
         </motion.div>
 
-        {/* Tabbed Panel Layout */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="max-w-6xl mx-auto"
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            {/* Left Panel - Selection Cards */}
-            <div className="lg:col-span-4 space-y-3">
-              {currentItems.map((item, index) => {
-                const isActive = currentIndex === index;
-                return (
-                  <motion.button
-                    key={item.id}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`w-full text-left p-4 rounded-xl border transition-all duration-300 ${
-                      isActive
-                        ? "bg-gradient-to-br from-primary to-navy-light border-accent/50 shadow-lg shadow-accent/10"
-                        : "bg-card/50 border-border hover:border-accent/30 hover:bg-card"
-                    }`}
-                    whileHover={{ scale: isActive ? 1 : 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <div className="flex items-center gap-4">
-                      {activeTab === "formats" ? (
-                        <div className="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+        {/* Carousel Content */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Navigation Arrows */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={prevSlide}
+            className="absolute -left-4 md:-left-16 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm border border-border shadow-lg hover:bg-accent hover:text-accent-foreground"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={nextSlide}
+            className="absolute -right-4 md:-right-16 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm border border-border shadow-lg hover:bg-accent hover:text-accent-foreground"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </Button>
+
+          {/* Slides */}
+          <div className="overflow-hidden">
+            <motion.div
+              key={`${activeTab}-${currentSlide}`}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.4 }}
+            >
+              {activeTab === "formats" ? (
+                <div className="bg-card border border-border rounded-2xl p-8 md:p-10">
+                  <div className="flex flex-col md:flex-row gap-8 items-start">
+                    <div className="flex-shrink-0">
+                      {eventFormats[currentSlide].image ? (
+                        <div className="w-20 h-20 rounded-xl overflow-hidden">
                           <img 
-                            src={(item as EventFormat).image} 
-                            alt={item.title}
+                            src={eventFormats[currentSlide].image} 
+                            alt={eventFormats[currentSlide].title}
                             className="w-full h-full object-cover"
                           />
                         </div>
                       ) : (
-                        <div className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                          isActive 
-                            ? "bg-white/20" 
-                            : "bg-gradient-to-br from-accent/20 to-accent/5"
-                        }`}>
+                        <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                           {(() => {
-                            const Icon = (item as AttendeeType).icon;
-                            return <Icon className={`w-6 h-6 ${isActive ? "text-white" : "text-accent"}`} />;
+                            const Icon = eventFormats[currentSlide].icon;
+                            return Icon ? <Icon className="w-8 h-8 text-white" /> : null;
                           })()}
                         </div>
                       )}
-                      <div className="flex-grow min-w-0">
-                        <h4 className={`font-semibold truncate ${
-                          isActive ? "text-white" : "text-foreground"
-                        }`}>
-                          {item.title}
-                        </h4>
-                        <p className={`text-sm truncate ${
-                          isActive ? "text-white/70" : "text-muted-foreground"
-                        }`}>
-                          {activeTab === "formats" 
-                            ? `${(item as EventFormat).highlights.length} key features`
-                            : `${(item as AttendeeType).benefits.length} benefits`
-                          }
-                        </p>
-                      </div>
-                      <div className={`w-2 h-2 rounded-full flex-shrink-0 ${
-                        isActive ? "bg-accent" : "bg-transparent"
-                      }`} />
                     </div>
-                  </motion.button>
-                );
-              })}
-            </div>
-
-            {/* Right Panel - Detail View */}
-            <div className="lg:col-span-8">
-              <motion.div
-                key={`${activeTab}-${currentIndex}`}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4 }}
-                className="h-full"
-              >
-                {activeTab === "formats" ? (
-                  <div className="relative h-full rounded-2xl overflow-hidden bg-gradient-to-br from-primary via-navy-light to-primary border border-accent/20">
-                    {/* Background Image with Overlay */}
-                    <div className="absolute inset-0">
-                      <img 
-                        src={eventFormats[activeFormatIndex].image}
-                        alt={eventFormats[activeFormatIndex].title}
-                        className="w-full h-full object-cover opacity-30"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent" />
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="relative p-8 md:p-10 flex flex-col justify-end min-h-[320px]">
-                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                        {eventFormats[activeFormatIndex].title}
+                    <div className="flex-grow">
+                      <h3 className="text-2xl font-bold text-foreground mb-3">
+                        {eventFormats[currentSlide].title}
                       </h3>
-                      <p className="text-white/80 mb-6 leading-relaxed max-w-xl">
-                        {eventFormats[activeFormatIndex].description}
+                      <p className="text-muted-foreground mb-6 leading-relaxed">
+                        {eventFormats[currentSlide].description}
                       </p>
                       <div className="flex flex-wrap gap-2">
-                        {eventFormats[activeFormatIndex].highlights.map((highlight) => (
+                        {eventFormats[currentSlide].highlights.map((highlight) => (
                           <span
                             key={highlight}
-                            className="px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium border border-white/20"
+                            className="px-3 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium"
                           >
                             {highlight}
                           </span>
@@ -254,41 +215,47 @@ export const AudienceSection = () => {
                       </div>
                     </div>
                   </div>
-                ) : (
-                  <div className="h-full rounded-2xl overflow-hidden bg-gradient-to-br from-primary via-navy-light to-primary border border-accent/20 p-8 md:p-10 flex flex-col justify-center min-h-[320px]">
-                    {/* Icon */}
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-tech-blue-dark flex items-center justify-center mb-6 shadow-lg shadow-accent/30">
-                      {(() => {
-                        const Icon = attendeeTypes[activeAttendeeIndex].icon;
-                        return <Icon className="w-8 h-8 text-white" />;
-                      })()}
+                </div>
+              ) : (
+                <div className="bg-card border border-border rounded-2xl p-8 md:p-10">
+                  <div className="flex flex-col md:flex-row gap-8 items-start">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                        {(() => {
+                          const Icon = attendeeTypes[currentSlide].icon;
+                          return <Icon className="w-8 h-8 text-white" />;
+                        })()}
+                      </div>
                     </div>
-                    
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                      {attendeeTypes[activeAttendeeIndex].title}
-                    </h3>
-                    <p className="text-white/80 mb-6 leading-relaxed max-w-xl">
-                      {attendeeTypes[activeAttendeeIndex].description}
-                    </p>
-                    
-                    {/* Benefits Grid */}
-                    <div className="grid grid-cols-2 gap-3">
-                      {attendeeTypes[activeAttendeeIndex].benefits.map((benefit) => (
-                        <div
-                          key={benefit}
-                          className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10"
-                        >
-                          <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-                          <span className="text-white/90 text-sm font-medium">{benefit}</span>
-                        </div>
-                      ))}
+                    <div className="flex-grow">
+                      <h3 className="text-2xl font-bold text-foreground mb-3">
+                        {attendeeTypes[currentSlide].title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {attendeeTypes[currentSlide].description}
+                      </p>
                     </div>
                   </div>
-                )}
-              </motion.div>
-            </div>
+                </div>
+              )}
+            </motion.div>
           </div>
-        </motion.div>
+
+          {/* Dots Navigation */}
+          <div className="flex justify-center gap-2 mt-6">
+            {currentItems.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  currentSlide === index
+                    ? "bg-accent w-8"
+                    : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
