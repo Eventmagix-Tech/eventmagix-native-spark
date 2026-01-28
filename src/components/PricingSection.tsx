@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BookDemoDialog } from "@/components/BookDemoDialog";
 
 const plans = [
   {
@@ -68,6 +70,8 @@ const plans = [
 ];
 
 export const PricingSection = () => {
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
+
   return (
     <section className="py-16 md:py-20 bg-background" id="pricing">
       <div className="container mx-auto px-4">
@@ -174,6 +178,7 @@ export const PricingSection = () => {
               <Button
                 variant={plan.popular ? "accent" : "outline"}
                 className="w-full"
+                onClick={plan.cta === "Book a Demo" ? () => setIsDemoOpen(true) : undefined}
               >
                 {plan.cta}
               </Button>
@@ -193,6 +198,8 @@ export const PricingSection = () => {
           Retrieval, and more.
         </motion.p>
       </div>
+
+      <BookDemoDialog open={isDemoOpen} onOpenChange={setIsDemoOpen} />
     </section>
   );
 };
