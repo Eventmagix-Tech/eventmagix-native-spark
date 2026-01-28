@@ -14,6 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import conferenceImage from "@/assets/events/conference.png";
 import corporateImage from "@/assets/events/corporate.png";
+import tradeShowsImage from "@/assets/events/trade-shows.png";
 
 interface EventFormat {
   id: string;
@@ -34,7 +35,7 @@ const eventFormats: EventFormat[] = [
   },
   {
     id: "expos",
-    icon: Store,
+    image: tradeShowsImage,
     title: "Trade Shows & Expos",
     description: "Optimized for exhibitions, booths, and B2B meetings. Facilitate networking with interactive maps, exhibitor listings, and appointment scheduling.",
     highlights: ["Interactive Floor Map", "Lead Retrieval", "B2B Meetings", "V-Card"]
