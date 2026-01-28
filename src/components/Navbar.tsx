@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,8 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDemoOpen, setIsDemoOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,13 +27,16 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Always show solid background on non-home pages
+  const showSolidBackground = !isHomePage || isScrolled;
+
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
+        showSolidBackground
           ? "bg-navy/80 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/10"
           : "bg-transparent"
       }`}
