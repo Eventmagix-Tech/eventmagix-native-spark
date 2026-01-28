@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BookDemoDialog } from "@/components/BookDemoDialog";
 import eventmagixLogo from "@/assets/eventmagix-logo-white.png";
 
 const navLinks = [
@@ -12,6 +13,7 @@ const navLinks = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -76,6 +78,7 @@ export const Navbar = () => {
                 variant="accent" 
                 size="sm" 
                 className="group relative overflow-hidden"
+                onClick={() => setIsDemoOpen(true)}
               >
                 <span className="relative z-10 flex items-center gap-1">
                   Book a Demo
@@ -122,7 +125,7 @@ export const Navbar = () => {
                 </motion.a>
               ))}
               <div className="pt-4 mt-2 border-t border-white/10">
-                <Button variant="accent" className="w-full">
+                <Button variant="accent" className="w-full" onClick={() => { setIsDemoOpen(true); setIsOpen(false); }}>
                   Book a Demo
                 </Button>
               </div>
@@ -130,6 +133,8 @@ export const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <BookDemoDialog open={isDemoOpen} onOpenChange={setIsDemoOpen} />
     </motion.nav>
   );
 };
