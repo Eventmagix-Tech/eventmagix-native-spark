@@ -9,7 +9,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { BookDemoDialog } from "@/components/BookDemoDialog";
-import abstracts from "@/assets/app-mockups/abstracts.jpg";
+import heroVideo from "@/assets/hero-video.mp4";
 
 export const HeroSection = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -153,17 +153,20 @@ export const HeroSection = () => {
                 className="relative"
               >
                 <div className="relative p-1 rounded-[1.8rem] bg-gradient-to-br from-white/40 via-white/10 to-transparent">
-                  <img
-                    src={abstracts}
-                    alt="Event app content access"
+                  <video
+                    src={heroVideo}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="relative w-full max-w-lg md:max-w-xl lg:max-w-2xl h-auto object-cover rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)]"
                   />
                   
                   {/* Glass Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-white/5 rounded-3xl" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-white/5 rounded-3xl pointer-events-none" />
                   
                   {/* Shine Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent rounded-3xl opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent rounded-3xl opacity-60 pointer-events-none" />
                 </div>
               </motion.div>
               
