@@ -64,7 +64,7 @@ const plans = [
       "Everything in Pro",
       "Everything in Networking",
     ],
-    cta: "Book a Demo",
+    cta: "Get Started",
     popular: false,
   },
 ];
@@ -178,7 +178,7 @@ export const PricingSection = () => {
               <Button
                 variant={plan.popular ? "accent" : "outline"}
                 className="w-full"
-                onClick={plan.cta === "Book a Demo" ? () => setIsDemoOpen(true) : undefined}
+                onClick={() => setIsDemoOpen(true)}
               >
                 {plan.cta}
               </Button>
