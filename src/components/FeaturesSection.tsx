@@ -163,6 +163,43 @@ const featureCategories = [
     ],
   },
   {
+    name: "Operations & Onsite",
+    description: "Manage the entire attendee journey from registration to exit",
+    icon: ScanLine,
+    accentColor: "text-violet-500",
+    bgColor: "bg-violet-500/10",
+    features: [
+      {
+        icon: ClipboardList,
+        title: "Registration & RSVP",
+        description: "Collect registrations and manage RSVPs via integrated forms.",
+        gradient: "from-violet-500/20 to-purple-500/20",
+        iconColor: "text-violet-500",
+      },
+      {
+        icon: BadgeCheck,
+        title: "Smart Badge Generation",
+        description: "Design and generate digital/printable attendee badges instantly.",
+        gradient: "from-purple-500/20 to-fuchsia-500/20",
+        iconColor: "text-purple-500",
+      },
+      {
+        icon: QrCode,
+        title: "QR Access Control",
+        description: "Track movements in real-time with QR-based check-ins for sessions and VIP zones.",
+        gradient: "from-indigo-500/20 to-violet-500/20",
+        iconColor: "text-indigo-500",
+      },
+      {
+        icon: UserCircle,
+        title: "Live Accreditation",
+        description: "Manage onsite registration desks and check-in flow with live data sync.",
+        gradient: "from-fuchsia-500/20 to-pink-500/20",
+        iconColor: "text-fuchsia-500",
+      },
+    ],
+  },
+  {
     name: "Information",
     description: "Deliver content and resources seamlessly",
     icon: Info,
