@@ -128,7 +128,11 @@ export const Footer = () => {
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50">
-            <p>© 2025 Eventmagix. All rights reserved.</p>
+            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+              <p>© 2025 Eventmagix. All rights reserved.</p>
+              <span className="hidden md:inline">|</span>
+              <p>EventMagix | a VERUS Group company</p>
+            </div>
             <div className="flex gap-6">
               <a href="https://eventmagix.com/privacy-policy.html" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                 Privacy Policy
