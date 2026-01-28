@@ -129,7 +129,7 @@ export const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50">
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-              <p>© 2025 Eventmagix. All rights reserved.</p>
+              <p>© 2026 Eventmagix. All rights reserved.</p>
               <span className="hidden md:inline">|</span>
               <p>EventMagix | a VERUS Group company</p>
             </div>
