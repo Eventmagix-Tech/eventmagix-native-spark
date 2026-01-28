@@ -14,7 +14,7 @@ const siteLinks = {
   ],
   company: [
     { name: "About Us", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "Contact", href: "/contact" },
     { name: "Careers", href: "#" },
   ],
   legal: [
