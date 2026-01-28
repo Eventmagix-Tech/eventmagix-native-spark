@@ -37,7 +37,7 @@ const eventFormats: EventFormat[] = [
     icon: Store,
     title: "Trade Shows & Expos",
     description: "Optimized for exhibitions, booths, and B2B meetings. Facilitate networking with interactive maps, exhibitor listings, and appointment scheduling.",
-    highlights: ["Interactive Floor Map", "Lead Retrieval", "B2B Meetings"]
+    highlights: ["Interactive Floor Map", "Lead Retrieval", "B2B Meetings", "V-Card"]
   },
   {
     id: "corporate",
