@@ -163,7 +163,7 @@ const featureCategories = [
     ],
   },
   {
-    name: "Operations & Onsite",
+    name: "Accreditation",
     description: "Manage the entire attendee journey from registration to exit",
     icon: ScanLine,
     accentColor: "text-violet-500",
