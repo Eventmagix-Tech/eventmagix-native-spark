@@ -97,8 +97,8 @@ const featureCategories = [
       },
       {
         icon: QrCode,
-        title: "QR Code",
-        description: "Personalized QR for access control or digital business card.",
+        title: "V-Card",
+        description: "Personalized QR V-Card to swap digital business card.",
         gradient: "from-gray-500/20 to-slate-500/20",
         iconColor: "text-gray-600",
       },
