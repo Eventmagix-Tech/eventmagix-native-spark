@@ -22,8 +22,8 @@ const Contact = () => {
               src="https://app.hellobonsai.com/f/c87817592a1b51c?embed=true" 
               frameBorder="0" 
               width="100%" 
-              height="100%" 
-              style={{ border: 'none', minHeight: '600px' }}
+              height="1200px"
+              style={{ border: 'none' }}
               title="Contact Form"
             />
           </div>
