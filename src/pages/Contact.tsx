@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 const Contact = () => {
+  useEffect(() => {
+    document.title = "Contact Us | Eventmagix";
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
