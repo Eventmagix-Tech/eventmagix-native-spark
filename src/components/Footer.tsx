@@ -37,6 +37,10 @@ export const Footer = () => {
               <img
                 src={eventmagixLogoWhite}
                 alt="Eventmagix - Native Mobile Event App Platform"
+                width={120}
+                height={32}
+                loading="lazy"
+                decoding="async"
                 className="h-8 w-auto object-contain"
               />
             </Link>

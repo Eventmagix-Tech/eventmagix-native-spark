@@ -81,6 +81,8 @@ export const Navbar = () => {
                 <img
                   src={eventmagixLogo}
                   alt="Eventmagix - Native Mobile Event App Platform"
+                  width={140}
+                  height={44}
                   className="h-9 md:h-11 w-auto object-contain"
                 />
               </Link>
