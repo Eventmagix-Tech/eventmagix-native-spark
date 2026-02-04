@@ -159,9 +159,9 @@ export const PricingSection = () => {
               {/* Features */}
               <ul className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm">
+                  <li key={feature} className="flex items-start gap-3 text-base">
                     <Check
-                      className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
+                      className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
                         plan.popular ? "text-tech-blue-light" : "text-accent"
                       }`}
                     />

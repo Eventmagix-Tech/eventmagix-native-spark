@@ -50,7 +50,7 @@ export const Footer = () => {
           </div>
 
           {/* Links */}
-          <nav aria-label="Footer navigation" className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          <nav aria-label="Footer navigation" className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2">
             {footerLinks.map((link) => (
               link.type === "external" ? (
                 <a
@@ -58,7 +58,7 @@ export const Footer = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-white/60 hover:text-white transition-colors"
+                  className="text-base text-white/60 hover:text-white transition-colors min-h-[48px] px-3 py-2 flex items-center"
                 >
                   {link.name}
                 </a>
@@ -67,7 +67,7 @@ export const Footer = () => {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleHashClick(e, link.href)}
-                  className="text-sm text-white/60 hover:text-white transition-colors"
+                  className="text-base text-white/60 hover:text-white transition-colors min-h-[48px] px-3 py-2 flex items-center"
                 >
                   {link.name}
                 </a>
@@ -75,7 +75,7 @@ export const Footer = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="text-sm text-white/60 hover:text-white transition-colors"
+                  className="text-base text-white/60 hover:text-white transition-colors min-h-[48px] px-3 py-2 flex items-center"
                 >
                   {link.name}
                 </Link>
@@ -88,19 +88,19 @@ export const Footer = () => {
             href="https://www.linkedin.com/company/eventmagixglobal/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex w-9 h-9 rounded-full bg-white/10 items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
+            className="inline-flex min-w-[48px] min-h-[48px] rounded-full bg-white/10 items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
             aria-label="Visit Eventmagix on LinkedIn"
           >
-            <Linkedin className="w-4 h-4" />
+            <Linkedin className="w-5 h-5" />
           </a>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-6">
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-1 text-xs text-white/40">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-1 text-sm text-white/40">
             <p>© 2026 Eventmagix. All rights reserved.</p>
             <span className="hidden sm:inline">•</span>
-            <p>A <a href="https://verus.group/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">VERUS Group</a> company</p>
+            <p>A <a href="https://verus.group/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors min-h-[48px] inline-flex items-center px-1">VERUS Group</a> company</p>
           </div>
         </div>
       </div>
