@@ -63,7 +63,11 @@ export const TrustSection = () => {
               <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-card border border-border/50 shadow-sm p-2 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:shadow-lg group-hover:scale-105 group-hover:border-primary/30">
                 <img
                   src={client.logo}
-                  alt={`${client.name} logo`}
+                  alt={`${client.name} - Eventmagix client`}
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-contain rounded-lg"
                 />
               </div>

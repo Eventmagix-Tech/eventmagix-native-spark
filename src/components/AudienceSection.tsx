@@ -15,6 +15,7 @@ const eventFormats = [
     id: "conferences",
     image: conferenceImage,
     title: "Conferences & Congresses",
+    alt: "Conference attendees networking at a multi-session professional event",
     description: "Large-scale, multi-session professional events with dynamic agendas and interactive session tracking.",
     highlights: ["Parallel Sessions", "Personal Agenda", "Live Q&A"]
   },
@@ -22,6 +23,7 @@ const eventFormats = [
     id: "expos",
     image: tradeShowsImage,
     title: "Trade Shows & Expos",
+    alt: "Trade show exhibition floor with exhibitor booths and B2B meeting areas",
     description: "Exhibitions and B2B meetings with interactive maps, exhibitor listings, and appointment scheduling.",
     highlights: ["Interactive Floor Map", "Lead Retrieval", "B2B Meetings"]
   },
@@ -29,6 +31,7 @@ const eventFormats = [
     id: "corporate",
     image: corporateImage,
     title: "Corporate Events",
+    alt: "Corporate event with branded stage and professional presentation setup",
     description: "Internal meetings, product launches, and training with custom branding and detailed reporting.",
     highlights: ["White Label", "Multi-Language", "Analytics"]
   }
@@ -141,7 +144,11 @@ export const AudienceSection = () => {
                   <div className="relative h-40 overflow-hidden">
                     <img 
                       src={format.image} 
-                      alt={format.title}
+                      alt={format.alt}
+                      width={400}
+                      height={160}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />

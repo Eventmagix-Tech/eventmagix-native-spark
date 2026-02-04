@@ -16,6 +16,7 @@ const reasons = [
     description:
       "Experience buttery-smooth 60fps animations, instant response times, and the polished feel users expect from premium apps.",
     image: agendaNative,
+    alt: "Native mobile app showing smooth agenda interface with 60fps performance",
   },
   {
     number: "02",
@@ -25,6 +26,7 @@ const reasons = [
     description:
       "Full functionality in airplane mode, conference centers with poor WiFi, or remote venues. Content syncs automatically when connectivity returns.",
     image: offlineAirplane,
+    alt: "Event app working offline during airplane flight with full functionality",
   },
   {
     number: "03",
@@ -34,6 +36,7 @@ const reasons = [
     description:
       "Choose Eventmagix Multi-App for fast deployment, or go fully custom with your own branded app. Both deliver the same native experience.",
     image: dashboard1,
+    alt: "Eventmagix dashboard showing app publishing and deployment options",
   },
   {
     number: "04",
@@ -43,6 +46,7 @@ const reasons = [
     description:
       "Drive participation and create memorable interactive experiences throughout your event with powerful engagement tools.",
     image: livePollingEngagement,
+    alt: "Live polling feature showing real-time audience engagement and voting",
   },
   {
     number: "05",
@@ -52,6 +56,7 @@ const reasons = [
     description:
       "Create a seamless extension of your brand that attendees will remember. Your event, your identity.",
     image: brandedExperience,
+    alt: "Custom branded event app with personalized colors, logos, and styling",
   },
 ];
 
@@ -159,7 +164,11 @@ export const DifferentiatorsSection = () => {
               >
                 <img
                   src={reasons[activeIndex].image}
-                  alt={reasons[activeIndex].title}
+                  alt={reasons[activeIndex].alt}
+                  width={600}
+                  height={280}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover absolute inset-0"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
