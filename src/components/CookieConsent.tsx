@@ -70,10 +70,10 @@ export const CookieConsent = () => {
                 </div>
                 <button
                   onClick={() => setIsVisible(false)}
-                  className="text-muted-foreground hover:text-foreground transition-colors p-1 rounded-lg hover:bg-muted/50"
+                  className="min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
                   aria-label="Close cookie consent"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-5 h-5" />
                 </button>
               </div>
             </div>
@@ -82,7 +82,7 @@ export const CookieConsent = () => {
             <div className="p-5">
               {!showSettings ? (
                 <>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                  <p className="text-base text-muted-foreground leading-relaxed mb-5">
                     We use cookies to enhance your browsing experience and analyze our traffic. 
                     By clicking "Accept All", you consent to our use of cookies.
                   </p>
@@ -105,17 +105,17 @@ export const CookieConsent = () => {
                     </Button>
                   </div>
 
-                  <div className="mt-4 flex items-center justify-center gap-4">
+                  <div className="mt-4 flex items-center justify-center gap-2">
                     <button
                       onClick={() => setShowSettings(true)}
-                      className="text-xs text-muted-foreground hover:text-accent transition-colors flex items-center gap-1"
+                      className="min-h-[44px] px-3 py-2 text-sm text-muted-foreground hover:text-accent transition-colors flex items-center gap-1"
                     >
-                      <Settings className="w-3 h-3" />
+                      <Settings className="w-4 h-4" />
                       Cookie Settings
                     </button>
                     <Link
                       to="/cookie-policy"
-                      className="text-xs text-muted-foreground hover:text-accent transition-colors"
+                      className="min-h-[44px] px-3 py-2 text-sm text-muted-foreground hover:text-accent transition-colors flex items-center"
                     >
                       Cookie Policy
                     </Link>
@@ -155,53 +155,53 @@ const CookieSettings = ({
     >
       <div className="space-y-3 mb-5">
         {/* Strictly Necessary - Always On */}
-        <div className="flex items-center justify-between p-3 rounded-lg bg-muted/30">
+        <div className="flex items-center justify-between p-3 rounded-lg bg-muted/30 min-h-[56px]">
           <div>
-            <p className="text-sm font-medium text-foreground">Strictly Necessary</p>
-            <p className="text-xs text-muted-foreground">Required for the website to function</p>
+            <p className="text-base font-medium text-foreground">Strictly Necessary</p>
+            <p className="text-sm text-muted-foreground">Required for the website to function</p>
           </div>
-          <div className="text-xs text-accent font-medium">Always On</div>
+          <div className="text-sm text-accent font-medium">Always On</div>
         </div>
 
         {/* Analytics */}
-        <label className="flex items-center justify-between p-3 rounded-lg bg-muted/30 cursor-pointer hover:bg-muted/50 transition-colors">
+        <label className="flex items-center justify-between p-3 rounded-lg bg-muted/30 cursor-pointer hover:bg-muted/50 transition-colors min-h-[56px]">
           <div>
-            <p className="text-sm font-medium text-foreground">Analytics</p>
-            <p className="text-xs text-muted-foreground">Help us improve our website</p>
+            <p className="text-base font-medium text-foreground">Analytics</p>
+            <p className="text-sm text-muted-foreground">Help us improve our website</p>
           </div>
           <input
             type="checkbox"
             checked={analytics}
             onChange={(e) => setAnalytics(e.target.checked)}
-            className="w-4 h-4 rounded border-border text-primary focus:ring-primary/50"
+            className="w-5 h-5 rounded border-border text-primary focus:ring-primary/50"
           />
         </label>
 
         {/* Marketing */}
-        <label className="flex items-center justify-between p-3 rounded-lg bg-muted/30 cursor-pointer hover:bg-muted/50 transition-colors">
+        <label className="flex items-center justify-between p-3 rounded-lg bg-muted/30 cursor-pointer hover:bg-muted/50 transition-colors min-h-[56px]">
           <div>
-            <p className="text-sm font-medium text-foreground">Marketing</p>
-            <p className="text-xs text-muted-foreground">Personalized advertisements</p>
+            <p className="text-base font-medium text-foreground">Marketing</p>
+            <p className="text-sm text-muted-foreground">Personalized advertisements</p>
           </div>
           <input
             type="checkbox"
             checked={marketing}
             onChange={(e) => setMarketing(e.target.checked)}
-            className="w-4 h-4 rounded border-border text-primary focus:ring-primary/50"
+            className="w-5 h-5 rounded border-border text-primary focus:ring-primary/50"
           />
         </label>
 
         {/* Functionality */}
-        <label className="flex items-center justify-between p-3 rounded-lg bg-muted/30 cursor-pointer hover:bg-muted/50 transition-colors">
+        <label className="flex items-center justify-between p-3 rounded-lg bg-muted/30 cursor-pointer hover:bg-muted/50 transition-colors min-h-[56px]">
           <div>
-            <p className="text-sm font-medium text-foreground">Functionality</p>
-            <p className="text-xs text-muted-foreground">Remember your preferences</p>
+            <p className="text-base font-medium text-foreground">Functionality</p>
+            <p className="text-sm text-muted-foreground">Remember your preferences</p>
           </div>
           <input
             type="checkbox"
             checked={functionality}
             onChange={(e) => setFunctionality(e.target.checked)}
-            className="w-4 h-4 rounded border-border text-primary focus:ring-primary/50"
+            className="w-5 h-5 rounded border-border text-primary focus:ring-primary/50"
           />
         </label>
       </div>

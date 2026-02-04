@@ -130,7 +130,7 @@ export const PricingSection = () => {
                   {plan.name}
                 </h3>
                 <p
-                  className={`text-sm ${
+                  className={`text-base ${
                     plan.popular ? "text-white/70" : "text-muted-foreground"
                   }`}
                 >
@@ -192,7 +192,7 @@ export const PricingSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-center text-sm text-muted-foreground mt-8"
+          className="text-center text-base text-muted-foreground mt-8"
         >
           * Additional add-ons available: B2B Meetings, Live Broadcasting, Lead
           Retrieval, and more.

@@ -159,6 +159,7 @@ export const HeroSection = () => {
                     loop
                     muted
                     playsInline
+                    preload="metadata"
                     width={768}
                     height={432}
                     aria-label="Eventmagix native mobile event app demonstration showing key features"

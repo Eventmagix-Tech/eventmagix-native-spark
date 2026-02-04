@@ -8,6 +8,17 @@
     <meta name="author" content="Eventmagix" />
     <meta name="keywords" content="event app, mobile event platform, conference app, native iOS Android, event technology, attendee engagement" />
 
+    <!-- Preconnect to critical third-party domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://player.vimeo.com" />
+    
+    <!-- Preload critical font -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" as="style" />
+    
+    <!-- DNS prefetch for analytics/third-party services -->
+    <link rel="dns-prefetch" href="https://app.hellobonsai.com" />
+
     <meta property="og:title" content="Eventmagix | Native Mobile Event App Platform" />
     <meta property="og:description" content="The all-in-one native mobile app for unforgettable events. Engage attendees, empower sponsors, and simplify management." />
     <meta property="og:type" content="website" />
@@ -17,7 +28,20 @@
     <meta name="twitter:site" content="@Eventmagix" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- Favicon with size hints -->
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#0f172a" />
+    
+    <!-- Critical CSS inline hint -->
+    <style>
+      /* Critical above-the-fold styles for faster FCP */
+      html { scroll-behavior: smooth; }
+      body { margin: 0; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+      #root { min-height: 100vh; }
+    </style>
   </head>
 
   <body>
