@@ -6,7 +6,7 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       
-      <main className="pt-24 md:pt-32 pb-16">
+      <main id="main-content" className="pt-24 md:pt-32 pb-16">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
