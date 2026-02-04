@@ -136,7 +136,7 @@ export const DifferentiatorsSection = () => {
                         {reason.title}
                       </h3>
                     </div>
-                    <p className="text-xs text-muted-foreground line-clamp-1">
+                    <p className="text-sm text-muted-foreground line-clamp-1 hidden sm:block">
                       {reason.shortDesc}
                     </p>
                   </div>
@@ -198,7 +198,7 @@ export const DifferentiatorsSection = () => {
                     </h3>
                   </div>
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-base leading-relaxed">
                   {reasons[activeIndex].description}
                 </p>
               </motion.div>

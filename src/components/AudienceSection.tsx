@@ -100,7 +100,7 @@ export const AudienceSection = () => {
           <div className="inline-flex p-1.5 rounded-full bg-muted/50 border border-border">
             <button
               onClick={() => setActiveTab("formats")}
-              className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`min-h-[48px] px-6 py-2.5 rounded-full text-base font-medium transition-all duration-300 ${
                 activeTab === "formats"
                   ? "bg-primary text-primary-foreground shadow-md"
                   : "text-muted-foreground hover:text-foreground"
@@ -110,7 +110,7 @@ export const AudienceSection = () => {
             </button>
             <button
               onClick={() => setActiveTab("attendees")}
-              className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`min-h-[48px] px-6 py-2.5 rounded-full text-base font-medium transition-all duration-300 ${
                 activeTab === "attendees"
                   ? "bg-primary text-primary-foreground shadow-md"
                   : "text-muted-foreground hover:text-foreground"
@@ -159,14 +159,14 @@ export const AudienceSection = () => {
                     <h3 className="text-lg font-bold text-foreground mb-2">
                       {format.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                    <p className="text-base text-muted-foreground mb-4 leading-relaxed">
                       {format.description}
                     </p>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-2">
                       {format.highlights.map((highlight) => (
                         <span
                           key={highlight}
-                          className="px-2.5 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium"
+                          className="px-3 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium"
                         >
                           {highlight}
                         </span>
@@ -196,7 +196,7 @@ export const AudienceSection = () => {
                   <h3 className="text-base font-bold text-foreground mb-2">
                     {attendee.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-base text-muted-foreground leading-relaxed">
                     {attendee.description}
                   </p>
                 </motion.div>
