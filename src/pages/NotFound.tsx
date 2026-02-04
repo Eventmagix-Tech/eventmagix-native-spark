@@ -6,6 +6,18 @@ const NotFound = () => {
 
   useEffect(() => {
     document.title = "Page Not Found | Eventmagix";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const content = "The page you're looking for doesn't exist. Return to the Eventmagix homepage to explore our native event app solutions.";
+    if (metaDescription) {
+      metaDescription.setAttribute("content", content);
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = content;
+      document.head.appendChild(meta);
+    }
+    
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
   }, [location.pathname]);
 

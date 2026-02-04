@@ -5,6 +5,17 @@ import { Footer } from "@/components/Footer";
 const CookiePolicy = () => {
   useEffect(() => {
     document.title = "Cookie Policy | Eventmagix";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const content = "Learn how Eventmagix uses cookies and similar technologies to improve your experience, measure performance, and personalize content.";
+    if (metaDescription) {
+      metaDescription.setAttribute("content", content);
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = content;
+      document.head.appendChild(meta);
+    }
   }, []);
 
   return (

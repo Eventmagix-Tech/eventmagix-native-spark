@@ -5,6 +5,17 @@ import { Footer } from "@/components/Footer";
 const Contact = () => {
   useEffect(() => {
     document.title = "Contact Us | Eventmagix";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const content = "Get in touch with Eventmagix. Request a demo, ask questions, or learn how our native event apps can elevate your next conference or event.";
+    if (metaDescription) {
+      metaDescription.setAttribute("content", content);
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = content;
+      document.head.appendChild(meta);
+    }
   }, []);
 
   return (

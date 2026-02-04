@@ -11,6 +11,17 @@ import { Footer } from "@/components/Footer";
 const Index = () => {
   useEffect(() => {
     document.title = "Eventmagix | Native Mobile Event Apps for Conferences";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const content = "Create branded native iOS and Android event apps with offline access, live polling, and real-time engagement. Trusted by leading brands worldwide.";
+    if (metaDescription) {
+      metaDescription.setAttribute("content", content);
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = content;
+      document.head.appendChild(meta);
+    }
   }, []);
 
   return (
