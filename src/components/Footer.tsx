@@ -20,7 +20,7 @@ const siteLinks = {
   legal: [
     { name: "Privacy Policy", href: "https://eventmagix.com/privacy-policy.html" },
     { name: "Terms of Service", href: "#" },
-    { name: "Cookie Policy", href: "#" },
+    { name: "Cookie Policy", href: "/cookie-policy" },
   ],
 };
 
