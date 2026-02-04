@@ -1,16 +1,31 @@
 import { Linkedin } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import eventmagixLogoWhite from "@/assets/eventmagix-logo-white.png";
 
 const footerLinks = [
-  { name: "Features", href: "#features" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Contact", href: "/contact" },
-  { name: "Privacy Policy", href: "https://eventmagix.com/privacy-policy.html", external: true },
-  { name: "Cookie Policy", href: "/cookie-policy" },
+  { name: "Features", href: "/#features", type: "hash" },
+  { name: "Pricing", href: "/#pricing", type: "hash" },
+  { name: "Contact", href: "/contact", type: "route" },
+  { name: "Privacy Policy", href: "https://eventmagix.com/privacy-policy.html", type: "external" },
+  { name: "Cookie Policy", href: "/cookie-policy", type: "route" },
 ];
 
 export const Footer = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
+  const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const hash = href.replace("/", "");
+    
+    if (isHomePage) {
+      e.preventDefault();
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <footer className="bg-primary text-primary-foreground" id="footer">
       <div className="container mx-auto px-4 py-10 md:py-14">
@@ -21,7 +36,7 @@ export const Footer = () => {
             <Link to="/">
               <img
                 src={eventmagixLogoWhite}
-                alt="Eventmagix"
+                alt="Eventmagix - Native Mobile Event App Platform"
                 className="h-8 w-auto object-contain"
               />
             </Link>
@@ -31,9 +46,9 @@ export const Footer = () => {
           </div>
 
           {/* Links */}
-          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          <nav aria-label="Footer navigation" className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             {footerLinks.map((link) => (
-              link.external ? (
+              link.type === "external" ? (
                 <a
                   key={link.name}
                   href={link.href}
@@ -43,10 +58,11 @@ export const Footer = () => {
                 >
                   {link.name}
                 </a>
-              ) : link.href.startsWith("#") ? (
+              ) : link.type === "hash" ? (
                 <a
                   key={link.name}
                   href={link.href}
+                  onClick={(e) => handleHashClick(e, link.href)}
                   className="text-sm text-white/60 hover:text-white transition-colors"
                 >
                   {link.name}
@@ -69,7 +85,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex w-9 h-9 rounded-full bg-white/10 items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
-            aria-label="LinkedIn"
+            aria-label="Visit Eventmagix on LinkedIn"
           >
             <Linkedin className="w-4 h-4" />
           </a>
