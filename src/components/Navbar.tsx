@@ -144,7 +144,7 @@ export const Navbar = () => {
             {/* Mobile Menu Button */}
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 text-white rounded-lg hover:bg-white/10 transition-colors"
+              className="md:hidden min-w-[48px] min-h-[48px] flex items-center justify-center text-white rounded-lg hover:bg-white/10 transition-colors"
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
@@ -166,7 +166,7 @@ export const Navbar = () => {
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="md:hidden bg-navy/95 backdrop-blur-xl border-t border-white/10"
             >
-              <div className="container mx-auto px-4 py-6 flex flex-col gap-2">
+              <div className="container mx-auto px-4 py-6 flex flex-col gap-3">
                 {navLinks.map((link, index) => (
                   link.type === "route" ? (
                     <motion.div
@@ -178,7 +178,7 @@ export const Navbar = () => {
                       <Link
                         to={link.href}
                         onClick={() => setIsOpen(false)}
-                        className="text-base font-medium text-white/70 hover:text-white transition-colors py-3 px-4 rounded-lg hover:bg-white/10 block"
+                        className="text-base font-medium text-white/70 hover:text-white transition-colors min-h-[48px] py-3 px-4 rounded-lg hover:bg-white/10 flex items-center"
                       >
                         {link.name}
                       </Link>
@@ -194,7 +194,7 @@ export const Navbar = () => {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="text-base font-medium text-white/70 hover:text-white transition-colors py-3 px-4 rounded-lg hover:bg-white/10"
+                      className="text-base font-medium text-white/70 hover:text-white transition-colors min-h-[48px] py-3 px-4 rounded-lg hover:bg-white/10 flex items-center"
                     >
                       {link.name}
                     </motion.a>

@@ -100,26 +100,26 @@ export const HeroSection = () => {
             </motion.div>
 
             {/* Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+            <h1 className="text-[28px] md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
               The All-in-One{" "}
               <span className="text-gradient">Native Mobile App</span> for
               Unforgettable Events
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg md:text-xl text-white/70 max-w-xl mx-auto lg:mx-0 mb-8">
+            <p className="text-base md:text-xl text-white/70 max-w-xl mx-auto lg:mx-0 mb-8">
               Engage attendees, empower sponsors, and simplify management with a
               100% native platform built for performance on iOS and Android.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="accent" size="lg" className="group" onClick={() => setIsDemoOpen(true)}>
+              <Button variant="accent" size="lg" className="group w-full sm:w-auto" onClick={() => setIsDemoOpen(true)}>
                 Book a Demo
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="heroOutline" size="lg" onClick={() => setIsVideoOpen(true)}>
-                <Play className="mr-2 w-4 h-4" />
+              <Button variant="heroOutline" size="lg" className="w-full sm:w-auto" onClick={() => setIsVideoOpen(true)}>
+                <Play className="mr-2 w-5 h-5" />
                 Video
               </Button>
             </div>

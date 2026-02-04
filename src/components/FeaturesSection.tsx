@@ -367,23 +367,23 @@ export const FeaturesSection = () => {
                 value={category.name} 
                 className="border border-border/50 rounded-2xl overflow-hidden bg-card/50 backdrop-blur-sm"
               >
-                <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-muted/30 transition-colors [&[data-state=open]>div>.chevron]:rotate-180">
-                  <div className="flex items-center gap-4 w-full">
-                    <div className={`w-12 h-12 rounded-xl ${category.bgColor} flex items-center justify-center shrink-0`}>
-                      <category.icon className={`w-6 h-6 ${category.accentColor}`} />
+                <AccordionTrigger className="px-4 sm:px-6 py-4 sm:py-5 hover:no-underline hover:bg-muted/30 transition-colors [&[data-state=open]>div>.chevron]:rotate-180 min-h-[64px]">
+                  <div className="flex items-center gap-3 sm:gap-4 w-full">
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl ${category.bgColor} flex items-center justify-center shrink-0`}>
+                      <category.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${category.accentColor}`} />
                     </div>
-                    <div className="text-left flex-1">
-                      <h3 className={`text-xl font-bold ${category.accentColor}`}>
+                    <div className="text-left flex-1 min-w-0">
+                      <h3 className={`text-lg sm:text-xl font-bold ${category.accentColor}`}>
                         {category.name}
                       </h3>
-                      <p className="text-sm text-muted-foreground">{category.description}</p>
+                      <p className="text-sm text-muted-foreground hidden sm:block">{category.description}</p>
                     </div>
-                    <span className="text-sm font-medium text-muted-foreground bg-muted px-3 py-1 rounded-full">
-                      {category.features.length} features
+                    <span className="text-xs sm:text-sm font-medium text-muted-foreground bg-muted px-2 sm:px-3 py-1 rounded-full shrink-0">
+                      {category.features.length}
                     </span>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6">
+                <AccordionContent className="px-4 sm:px-6 pb-6">
                   {/* Features Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pt-4">
                     {category.features.map((feature, index) => (
@@ -408,7 +408,7 @@ export const FeaturesSection = () => {
                             </h4>
 
                             {/* Description */}
-                            <p className="text-xs text-muted-foreground leading-relaxed">
+                            <p className="text-sm text-muted-foreground leading-relaxed">
                               {feature.description}
                             </p>
                           </div>
