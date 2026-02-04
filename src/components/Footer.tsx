@@ -96,7 +96,7 @@ export const Footer = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-1 text-xs text-white/40">
             <p>© 2026 Eventmagix. All rights reserved.</p>
             <span className="hidden sm:inline">•</span>
-            <p>A VERUS Group company</p>
+            <p>A <a href="https://verus.group/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">VERUS Group</a> company</p>
           </div>
         </div>
       </div>
