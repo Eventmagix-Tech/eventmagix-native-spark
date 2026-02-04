@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 const CookiePolicy = () => {
+  useEffect(() => {
+    document.title = "Cookie Policy | Eventmagix";
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
