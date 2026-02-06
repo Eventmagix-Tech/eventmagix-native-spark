@@ -24,6 +24,7 @@ export const CookieConsent = () => {
     localStorage.setItem("cookie-analytics", "true");
     localStorage.setItem("cookie-marketing", "true");
     localStorage.setItem("cookie-functionality", "true");
+    window.dispatchEvent(new Event("cookie-consent-updated"));
     setIsVisible(false);
   };
 
@@ -44,6 +45,7 @@ export const CookieConsent = () => {
     localStorage.setItem("cookie-analytics", String(settings.analytics));
     localStorage.setItem("cookie-marketing", String(settings.marketing));
     localStorage.setItem("cookie-functionality", String(settings.functionality));
+    window.dispatchEvent(new Event("cookie-consent-updated"));
     setIsVisible(false);
     setShowSettings(false);
   };
