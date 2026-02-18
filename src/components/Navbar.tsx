@@ -1,23 +1,24 @@
 import { useState, useEffect } from "react";
-import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookDemoDialog } from "@/components/BookDemoDialog";
+import { ContactFormDialog } from "@/components/ContactFormDialog";
 import eventmagixLogo from "@/assets/eventmagix-logo-white.png";
 
 const navLinks = [
   { name: "Features", href: "/#features", type: "hash" },
   { name: "Pricing", href: "/#pricing", type: "hash" },
-  { name: "Contact", href: "/contact", type: "route" },
+  { name: "Contact", href: "#", type: "contact" },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDemoOpen, setIsDemoOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
   const isHomePage = location.pathname === "/";
 
   useEffect(() => {
@@ -28,10 +29,8 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle hash link clicks with smart navigation
   const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     const hash = href.replace("/", "");
-    
     if (isHomePage) {
       e.preventDefault();
       const element = document.querySelector(hash);
@@ -39,15 +38,12 @@ export const Navbar = () => {
         element.scrollIntoView({ behavior: "smooth" });
       }
     }
-    // If not on home page, let the default navigation happen to /#section
   };
 
-  // Always show solid background on non-home pages
   const showSolidBackground = !isHomePage || isScrolled;
 
   return (
     <header>
-      {/* Skip to main content link for accessibility */}
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-accent focus:text-accent-foreground focus:rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
@@ -74,10 +70,7 @@ export const Navbar = () => {
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
-              <Link 
-                to="/" 
-                className="flex items-center gap-2 relative group"
-              >
+              <Link to="/" className="flex items-center gap-2 relative group">
                 <img
                   src={eventmagixLogo}
                   alt="Eventmagix - Native Mobile Event App Platform"
@@ -92,20 +85,17 @@ export const Navbar = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center">
               <div className="flex items-center gap-1 px-2 py-1.5 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
-                {navLinks.map((link) => (
-                  link.type === "route" ? (
-                    <motion.div
+                {navLinks.map((link) =>
+                  link.type === "contact" ? (
+                    <motion.button
                       key={link.name}
+                      onClick={() => setIsContactOpen(true)}
+                      className="relative px-4 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors rounded-full hover:bg-white/10"
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 400, damping: 17 }}
                     >
-                      <Link
-                        to={link.href}
-                        className="relative px-4 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors rounded-full hover:bg-white/10 block"
-                      >
-                        {link.name}
-                      </Link>
-                    </motion.div>
+                      {link.name}
+                    </motion.button>
                   ) : (
                     <motion.a
                       key={link.name}
@@ -118,19 +108,16 @@ export const Navbar = () => {
                       {link.name}
                     </motion.a>
                   )
-                ))}
+                )}
               </div>
             </div>
 
             {/* Desktop CTA */}
             <div className="hidden md:flex items-center">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Button 
-                  variant="accent" 
-                  size="sm" 
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                <Button
+                  variant="accent"
+                  size="sm"
                   className="group relative overflow-hidden"
                   onClick={() => setIsDemoOpen(true)}
                 >
@@ -168,22 +155,21 @@ export const Navbar = () => {
               className="md:hidden bg-navy/95 backdrop-blur-xl border-t border-white/10"
             >
               <div className="container mx-auto px-4 py-6 flex flex-col gap-3">
-                {navLinks.map((link, index) => (
-                  link.type === "route" ? (
-                    <motion.div
+                {navLinks.map((link, index) =>
+                  link.type === "contact" ? (
+                    <motion.button
                       key={link.name}
+                      onClick={() => {
+                        setIsContactOpen(true);
+                        setIsOpen(false);
+                      }}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
+                      className="text-base font-medium text-white/70 hover:text-white transition-colors min-h-[48px] py-3 px-4 rounded-lg hover:bg-white/10 flex items-center text-left"
                     >
-                      <Link
-                        to={link.href}
-                        onClick={() => setIsOpen(false)}
-                        className="text-base font-medium text-white/70 hover:text-white transition-colors min-h-[48px] py-3 px-4 rounded-lg hover:bg-white/10 flex items-center"
-                      >
-                        {link.name}
-                      </Link>
-                    </motion.div>
+                      {link.name}
+                    </motion.button>
                   ) : (
                     <motion.a
                       key={link.name}
@@ -200,9 +186,16 @@ export const Navbar = () => {
                       {link.name}
                     </motion.a>
                   )
-                ))}
+                )}
                 <div className="pt-4 mt-2 border-t border-white/10">
-                  <Button variant="accent" className="w-full" onClick={() => { setIsDemoOpen(true); setIsOpen(false); }}>
+                  <Button
+                    variant="accent"
+                    className="w-full"
+                    onClick={() => {
+                      setIsDemoOpen(true);
+                      setIsOpen(false);
+                    }}
+                  >
                     Book a Demo
                   </Button>
                 </div>
@@ -212,6 +205,7 @@ export const Navbar = () => {
         </AnimatePresence>
 
         <BookDemoDialog open={isDemoOpen} onOpenChange={setIsDemoOpen} />
+        <ContactFormDialog open={isContactOpen} onOpenChange={setIsContactOpen} />
       </motion.nav>
     </header>
   );
