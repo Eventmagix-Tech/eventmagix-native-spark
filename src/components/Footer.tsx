@@ -1,22 +1,24 @@
+import { useState } from "react";
 import { Linkedin } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { ContactFormDialog } from "@/components/ContactFormDialog";
 import eventmagixLogoWhite from "@/assets/eventmagix-logo-white.png";
 
 const footerLinks = [
   { name: "Features", href: "/#features", type: "hash" },
   { name: "Pricing", href: "/#pricing", type: "hash" },
-  { name: "Contact", href: "/contact", type: "route" },
+  { name: "Contact", href: "#", type: "contact" },
   { name: "Privacy Policy", href: "https://eventmagix.com/privacy-policy.html", type: "external" },
   { name: "Cookie Policy", href: "/cookie-policy", type: "route" },
 ];
 
 export const Footer = () => {
+  const [isContactOpen, setIsContactOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
   const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     const hash = href.replace("/", "");
-    
     if (isHomePage) {
       e.preventDefault();
       const element = document.querySelector(hash);
@@ -51,8 +53,16 @@ export const Footer = () => {
 
           {/* Links */}
           <nav aria-label="Footer navigation" className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2">
-            {footerLinks.map((link) => (
-              link.type === "external" ? (
+            {footerLinks.map((link) =>
+              link.type === "contact" ? (
+                <button
+                  key={link.name}
+                  onClick={() => setIsContactOpen(true)}
+                  className="text-base text-white/60 hover:text-white transition-colors min-h-[48px] px-3 py-2 flex items-center"
+                >
+                  {link.name}
+                </button>
+              ) : link.type === "external" ? (
                 <a
                   key={link.name}
                   href={link.href}
@@ -80,7 +90,7 @@ export const Footer = () => {
                   {link.name}
                 </Link>
               )
-            ))}
+            )}
           </nav>
 
           {/* Social */}
@@ -104,6 +114,8 @@ export const Footer = () => {
           </div>
         </div>
       </div>
+
+      <ContactFormDialog open={isContactOpen} onOpenChange={setIsContactOpen} />
     </footer>
   );
 };
