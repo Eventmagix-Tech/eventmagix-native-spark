@@ -1,25 +1,24 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 const Contact = () => {
-  useEffect(() => {
-    document.title = "Contact Us | Eventmagix";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    const content = "Get in touch with Eventmagix. Request a demo, ask questions, or learn how our native event apps can elevate your next conference or event.";
-    if (metaDescription) {
-      metaDescription.setAttribute("content", content);
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = content;
-      document.head.appendChild(meta);
-    }
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Contact Us | Eventmagix</title>
+        <meta
+          name="description"
+          content="Get in touch with Eventmagix. Request a demo, ask questions, or learn how our native event apps can elevate your next conference or event."
+        />
+        <link rel="canonical" href="https://app.eventmagix.com/contact" />
+        <meta property="og:title" content="Contact Us | Eventmagix" />
+        <meta
+          property="og:description"
+          content="Get in touch with Eventmagix. Request a demo or learn how our native event apps can elevate your next conference."
+        />
+        <meta property="og:url" content="https://app.eventmagix.com/contact" />
+      </Helmet>
       <Navbar />
       
       <main id="main-content" className="pt-24 md:pt-32 pb-16">
