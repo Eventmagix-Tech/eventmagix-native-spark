@@ -1,0 +1,14 @@
+# Eventmagix
+
+> Eventmagix is an all-in-one native mobile event app platform for iOS and Android, delivering attendee networking, gamification, and real-time engagement for conferences and events.
+
+Eventmagix helps event organizers launch 100% native mobile apps that engage attendees, empower sponsors, and simplify event management. A VERUS Group company.
+
+## Pages
+
+- [Home](/): Overview of the Eventmagix native event app platform and its features.
+- [Contact](/contact): Get in touch with the Eventmagix team for demos and inquiries.
+
+## Optional
+
+- [Cookie Policy](/cookie-policy): How Eventmagix uses cookies and tracking.

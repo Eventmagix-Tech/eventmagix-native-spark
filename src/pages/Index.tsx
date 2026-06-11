@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { TrustSection } from "@/components/TrustSection";
@@ -13,8 +13,8 @@ const organizationSchema = {
   "@type": "Organization",
   "name": "Eventmagix",
   "description": "Native mobile event apps for conferences, trade shows, and corporate events. Featuring offline access, live polling, networking, and real-time engagement tools.",
-  "url": "https://eventmagix-native-spark.lovable.app",
-  "logo": "https://eventmagix-native-spark.lovable.app/favicon.png",
+  "url": "https://app.eventmagix.com",
+  "logo": "https://app.eventmagix.com/favicon.png",
   "sameAs": [
     "https://www.linkedin.com/company/eventmagixglobal/"
   ],
@@ -26,7 +26,7 @@ const organizationSchema = {
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "sales",
-    "url": "https://eventmagix-native-spark.lovable.app/contact"
+    "url": "https://app.eventmagix.com/contact"
   },
   "offers": {
     "@type": "AggregateOffer",
@@ -37,41 +37,23 @@ const organizationSchema = {
 };
 
 const Index = () => {
-  useEffect(() => {
-    document.title = "Eventmagix | Native Mobile Event Apps for Conferences";
-    
-    // Meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    const content = "Create branded native iOS and Android event apps with offline access, live polling, and real-time engagement. Trusted by leading brands worldwide.";
-    if (metaDescription) {
-      metaDescription.setAttribute("content", content);
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = content;
-      document.head.appendChild(meta);
-    }
-
-    // Organization Schema (JSON-LD)
-    const existingSchema = document.querySelector('script[type="application/ld+json"]');
-    if (!existingSchema) {
-      const script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.textContent = JSON.stringify(organizationSchema);
-      document.head.appendChild(script);
-    }
-
-    return () => {
-      // Cleanup schema on unmount
-      const schema = document.querySelector('script[type="application/ld+json"]');
-      if (schema) {
-        schema.remove();
-      }
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Eventmagix | Native Mobile Event Apps for Conferences</title>
+        <meta
+          name="description"
+          content="Create branded native iOS and Android event apps with offline access, live polling, and real-time engagement. Trusted by leading brands worldwide."
+        />
+        <link rel="canonical" href="https://app.eventmagix.com/" />
+        <meta property="og:title" content="Eventmagix | Native Mobile Event App Platform" />
+        <meta
+          property="og:description"
+          content="The all-in-one native mobile app for unforgettable events. Engage attendees, empower sponsors, and simplify management."
+        />
+        <meta property="og:url" content="https://app.eventmagix.com/" />
+        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+      </Helmet>
       <Navbar />
       <main id="main-content">
         <HeroSection />

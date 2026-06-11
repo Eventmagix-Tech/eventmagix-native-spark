@@ -1,25 +1,24 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 const CookiePolicy = () => {
-  useEffect(() => {
-    document.title = "Cookie Policy | Eventmagix";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    const content = "Learn how Eventmagix uses cookies and similar technologies to improve your experience, measure performance, and personalize content.";
-    if (metaDescription) {
-      metaDescription.setAttribute("content", content);
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = content;
-      document.head.appendChild(meta);
-    }
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Cookie Policy | Eventmagix</title>
+        <meta
+          name="description"
+          content="Learn how Eventmagix uses cookies and similar technologies to improve your experience, measure performance, and personalize content."
+        />
+        <link rel="canonical" href="https://app.eventmagix.com/cookie-policy" />
+        <meta property="og:title" content="Cookie Policy | Eventmagix" />
+        <meta
+          property="og:description"
+          content="Learn how Eventmagix uses cookies and similar technologies to improve your experience and personalize content."
+        />
+        <meta property="og:url" content="https://app.eventmagix.com/cookie-policy" />
+      </Helmet>
       <Navbar />
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4 max-w-4xl">
