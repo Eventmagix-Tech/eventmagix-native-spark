@@ -18,7 +18,7 @@ export const BookDemoDialog = ({ open, onOpenChange }: BookDemoDialogProps) => {
           <DialogTitle>Book a Demo</DialogTitle>
         </DialogHeader>
         <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdjoXXqg7lPDfgdJe85x5qtGEdcfOYienu_g_mQu2O4UFZx1g/viewform?embedded=true" 
+          src="https://app.hellobonsai.com/f/296168426a4f5de?embed=true&hide_header=true" 
           frameBorder="0" 
           width="100%" 
           height="600px"
