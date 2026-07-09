@@ -34,13 +34,15 @@ const Contact = () => {
           
           <div className="max-w-4xl mx-auto bg-card rounded-2xl shadow-lg border border-border overflow-hidden">
             <iframe 
-              src="https://app.hellobonsai.com/f/c87817592a1b51c?embed=true" 
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdjoXXqg7lPDfgdJe85x5qtGEdcfOYienu_g_mQu2O4UFZx1g/viewform?embedded=true" 
               frameBorder="0" 
+              marginHeight={0}
+              marginWidth={0}
               width="100%" 
-              height="1200px"
+              height="1770px"
               style={{ border: 'none' }}
               title="Contact Form"
-            />
+            >Loading…</iframe>
           </div>
         </div>
       </main>
